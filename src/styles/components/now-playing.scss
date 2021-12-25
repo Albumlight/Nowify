@@ -6,7 +6,7 @@
  */
 .now-playing {
   background-color: var(--colour-background-now-playing);
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3, rgba(0,0,0,1));
   color: #FFFFFF;
   display: flex;
   flex-flow: column nowrap;
@@ -69,7 +69,7 @@
 
     &__details {
       text-align: center;
-      padding-top: 440px;
+      padding-top: 420px;
       padding-left: 290px;
       padding-right: 150px;
     }
