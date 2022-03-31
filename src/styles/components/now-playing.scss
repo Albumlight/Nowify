@@ -21,7 +21,7 @@
   }
 
   &__cover {
-    max-width: 100px;
+    max-width: 1000px;
     top: 85px;
   }
 
@@ -62,7 +62,7 @@
 
     &__cover,
     &__details {
-      width: 0%;
+      width: 100%;
       max-width: 1000px;
     }
 
