@@ -7,9 +7,7 @@
 .now-playing {
   background-color: #000000;
   color: #FFFFFF;
-  
   height: 100%;
-  
   width: 100%;
 
   &__cover,
@@ -62,7 +60,6 @@
     &__cover,
      {
       width: 1080px;
-      max-width: 1000px;
     }
 
     &__details {
