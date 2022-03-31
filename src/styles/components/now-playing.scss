@@ -7,7 +7,7 @@
 .now-playing {
   background-color: #000000;
   color: #FFFFFF;
- 
+  padding: var(--spacing-l);
   flex-flow: column nowrap;
   height: 100%;
   
@@ -15,7 +15,7 @@
 
   &__cover,
   &__details {
-    padding: var(--spacing-m);
+   
     text-align: center;
     width: 10%;
   }
