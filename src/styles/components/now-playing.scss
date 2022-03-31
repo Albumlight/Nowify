@@ -10,14 +10,14 @@
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
-  
+  padding: var(--spacing-l);
   width: 100%;
 
   &__cover,
   &__details {
     padding: var(--spacing-m);
     text-align: center;
-    width: 100%;
+    width: 10%;
   }
 
   &__cover {
