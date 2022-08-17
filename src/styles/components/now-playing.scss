@@ -6,7 +6,6 @@
  */
 .now-playing {
   background-color: #000000;
-  filter: contrast(90%) brightness(90%) sepia(10%);
   color: #FFFFFF;
   height: 100%;
   width: 100%;
@@ -27,6 +26,7 @@
     max-width: 930px;
     width: 100%;
     padding-top: 40px;
+    filter: contrast(90%) brightness(90%) sepia(10%);
   }
 
   &__details {
