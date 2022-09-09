@@ -5,10 +5,11 @@
  *
  */
 .now-playing {
-  background: &__image {
+  
+  background: this.playerResponse.item.album.images[0].url
   height: 100%;
   width: 100%;
-    }
+    
   &__cover,
   &__details {
    
