@@ -5,6 +5,11 @@
       class="now-playing"
       :class="getNowPlayingClass()"
     >
+    <img
+          :src="player.trackAlbum.image"
+          :alt="player.trackTitle"
+          class="now-playing__image"
+        />
       <div class="now-playing__cover">
         <img
           :src="player.trackAlbum.image"
