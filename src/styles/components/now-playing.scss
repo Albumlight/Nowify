@@ -73,5 +73,10 @@
       padding-right: 90px;
       padding-bottom: 160px;
     }
+   
+    &__image {
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+    }
   }
 }
