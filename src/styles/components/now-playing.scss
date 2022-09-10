@@ -5,7 +5,8 @@
  
  */
 .now-playing {
-  background: #000;
+  background-color: var(--colour-background-now-playing);
+  color: var(--color-text-primary);
   height: 100%;
   width: 100%;
   
@@ -65,7 +66,7 @@
       width: 100%;
     }
 
-    &__track {
+    &__details {
       position: absolute;
       text-align: center;
       padding-top: 460px;
