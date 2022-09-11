@@ -158,7 +158,7 @@ export default {
      */
     getEmptyPlayer() {
       return {
-        playing: true,
+        playing: false,
         trackAlbum: {},
         trackArtists: [],
         trackId: '',
@@ -229,7 +229,7 @@ export default {
         trackArtists: this.playerResponse.item.artists.map(
           artist => artist.name
         ),
-        trackTitle2: this.playerResponse.item.album.name,
+        trackTitle2: this.playerResponse.item.playlists.name,
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
