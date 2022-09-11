@@ -163,7 +163,7 @@ export default {
         trackArtists: [],
         trackId: '',
         trackTitle: ''
-        trackAlbum2: {}
+        trackAlbum2: {},
       }
     },
 
