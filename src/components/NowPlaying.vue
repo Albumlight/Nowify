@@ -14,7 +14,7 @@
         />
       </div>
       <div class="now-playing__details">
-        <h1 class="now-playing__track" v-text="player.trackTest"></h1>
+        <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
         <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
       </div>
     </div>
@@ -230,7 +230,6 @@ export default {
           artist => artist.name
         ),
         trackTitle: this.playerResponse.item.name,
-        trackTest: this.playerResonse.item.album.name,
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
