@@ -9,18 +9,12 @@
   color: #FFF;
   height: 100%;
   width: 100%;
-  animation: myfadeIn 2s; 
   
   &__cover,
   &__details {
    
     text-align: center;
     width: 100%;
-  }
-  
-  @keyframes myfadeIn {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
   }
  
   &__cover {
