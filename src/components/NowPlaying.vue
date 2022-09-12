@@ -5,17 +5,12 @@
       class="now-playing"
       :class="getNowPlayingClass()"
     >
-   
-      <div class="now-playing__cover">
+   <div class="now-playing__cover">
         <img
           :src="player.trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
-        </div>
-      <div class="now-playing__kut">
-        <h4 class="now-playing__track" v-text="player.trackTitle2"></h4>
-        </div> 
       </div>
       <div class="now-playing__details">
         <h1 class="now-playing__track" v-text="player.trackTitle2"></h1>
@@ -25,6 +20,7 @@
       </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
       <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
+     </div>
     </div>
 </template>
 
