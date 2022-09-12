@@ -13,7 +13,7 @@
           class="now-playing__image"
         />
       </div>
-      <div class="now-playing__details">
+      <div class="now-playing__sound">
         <h1 class="now-playing__track" v-text="player.trackTitle2"></h1>
         <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
         <h3 class="now-playing__idle-heading">Currently streaming from Spotify</h3>
