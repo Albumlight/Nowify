@@ -148,7 +148,7 @@ export default {
         .clearFilters()
         .getPalette()
         .then(palette => {
-          this.handleAlbumPalette()
+          this.handleAlbumPalette(palette)
         })
     },
 
