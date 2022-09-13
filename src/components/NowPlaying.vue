@@ -148,7 +148,7 @@ export default {
         .clearFilters()
         .getPalette()
         .then(palette => {
-          this.handleAlbumPalette(palette)
+          this.handleAlbumPalette(Muted)
         })
     },
 
@@ -258,7 +258,7 @@ export default {
       this.swatches = albumColours
 
       this.colourPalette =
-        albumColours[Math.floor() * albumColours.length)]
+        albumColours[Math.floor(Math.random() * albumColours.length)]
 
       this.$nextTick(() => {
         this.setAppColours()
