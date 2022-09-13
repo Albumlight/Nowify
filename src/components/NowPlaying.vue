@@ -251,7 +251,7 @@ export default {
         .map(colour => {
           return {
             text: palette[colour].getTitleTextColor(),
-            background: palette[defaultColour].getHex()
+            background: palette[].getHex()
           }
         })
 
