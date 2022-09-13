@@ -251,14 +251,14 @@ export default {
         .map(colour => {
           return {
             text: palette[colour].getTitleTextColor(),
-            background: palette[].getHex()
+            background: palette[colour].getHex()
           }
         })
 
       this.swatches = albumColours
 
       this.colourPalette =
-        albumColours[Math.floor(Math.random() * albumColours.length)]
+        albumColours[Math.floor() * albumColours.length)]
 
       this.$nextTick(() => {
         this.setAppColours()
