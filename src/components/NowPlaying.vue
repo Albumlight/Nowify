@@ -258,7 +258,7 @@ export default {
       this.swatches = albumColours
 
       this.colourPalette =
-        albumColours[(albumColours.length/6)]
+        albumColours[(albumColours.length/3)]
 
       this.$nextTick(() => {
         this.setAppColours()
