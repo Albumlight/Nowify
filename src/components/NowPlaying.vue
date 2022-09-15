@@ -162,7 +162,8 @@ export default {
         trackAlbum: {},
         trackArtists: [],
         trackId: '',
-        trackTitle2: ''
+        trackTitle2: '',
+        plaatje: {}
       }
     },
 
