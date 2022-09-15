@@ -226,7 +226,8 @@ export default {
        */
       this.playerData = {
         playing: this.playerResponse.is_playing,
-        trackAlbum: this.playerResponse.item.album.images[0].url,
+        trackAlbum: {
+        image: this.playerResponse.item.album.images[0].url},
         trackTitle2: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
       }
