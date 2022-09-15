@@ -233,7 +233,7 @@ export default {
         trackTitle2: this.playerResponse.item.name,
         plaatje: {
         image: this.playerResponse.item.artists.images[0].url
-        }
+        },
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
