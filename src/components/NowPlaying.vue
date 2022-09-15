@@ -7,7 +7,7 @@
     >
    <div class="now-playing__cover">
         <img
-          :src="player.plaatje.image"
+          :src="player.trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -136,7 +136,7 @@ export default {
       /**
        * No image (rare).
        */
-      if (!this.player.plaatje?.image) {
+      if (!this.player.trackAlbum?.image) {
         return
       }
 
@@ -162,8 +162,7 @@ export default {
         trackAlbum: {},
         trackArtists: [],
         trackId: '',
-        trackTitle2: '',
-        plaatje: {}
+        trackTitle2: ''
       }
     },
 
@@ -231,9 +230,6 @@ export default {
           artist => artist.name
         ),
         trackTitle2: this.playerResponse.item.name,
-        plaatje: {
-        image: this.playerResponse.item.artists.images[0].url
-        },
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
