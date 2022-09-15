@@ -234,7 +234,7 @@ export default {
         trackAlbum: {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.artists.map(
-          images => images[0].url)
+          images => artists.images[0].url)
         }
       }
     },
