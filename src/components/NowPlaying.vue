@@ -228,14 +228,14 @@ export default {
         playing: this.playerResponse.is_playing,
         trackArtists: {this.playerResponse.item.artists.map(
           artist => artist.name
-        ),
+        )
         image2: this.playerResponse.item.artists.images[0].url
-        }
+        },
         trackTitle2: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.tracks.images[0].url
+          image: this.playerResponse.item.albums.images[0].url
         }
       }
     },
