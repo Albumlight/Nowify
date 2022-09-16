@@ -136,14 +136,14 @@ export default {
       /**
        * No image (rare).
        */
-      if (!this.player.trackAlbum?.image) {
+      if (!this.player.trackAlbum?.image2) {
         return
       }
 
       /**
        * Run node-vibrant to get colours.
        */
-      Vibrant.from(this.player.trackAlbum.image)
+      Vibrant.from(this.player.trackAlbum.image2)
         .quality(1)
         .clearFilters()
         .getPalette()
