@@ -226,11 +226,9 @@ export default {
        */
       this.playerData = {
         playing: this.playerResponse.is_playing,
-        trackArtists: {this.playerResponse.item.artists.map(
+        trackArtists: this.playerResponse.item.artists.map(
           artist => artist.name
-        )
-        image2: this.playerResponse.item.artists.images[0].url
-        },
+        ),
         trackTitle2: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
         trackAlbum: {
