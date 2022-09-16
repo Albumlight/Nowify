@@ -136,14 +136,14 @@ export default {
       /**
        * No image (rare).
        */
-      if (!this.player.trackAlbum?.image2) {
+      if (!this.player.trackAlbum?.image) {
         return
       }
 
       /**
        * Run node-vibrant to get colours.
        */
-      Vibrant.from(this.player.trackAlbum.image2)
+      Vibrant.from(this.player.trackAlbum.image)
         .quality(1)
         .clearFilters()
         .getPalette()
@@ -234,8 +234,6 @@ export default {
         trackAlbum: {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url,
-          image2: this.playerResponse.item.album.artists.map(
-          artists => artists.images[0].url)
         }
       }
     },
