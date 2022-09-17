@@ -225,10 +225,10 @@ export default {
         ),
         trackTitle2: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
-        artistId: this.playerResponse.item.artists[0].id,
+        artistId: this.playerResponse.item.artists.id,
         trackAlbu: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.artists.images[0].href
+          image: this.playerResponse.item.artists.images[0].url
         }
       }
     },
