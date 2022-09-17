@@ -7,7 +7,7 @@
     >
    <div class="now-playing__cover">
         <img
-          :src="player.trackAlbum.image"
+          :src="player.artistId.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -226,9 +226,9 @@ export default {
         trackTitle2: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
         artistId: this.playerResponse.item.id,
-        trackAlbum: {
+        artistId: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.album.artists[0].images.url
+          image: this.playerResponse.item.artists[0].images.url
         }
       }
     },
