@@ -158,7 +158,7 @@ export default {
     getEmptyPlayer() {
       return {
         playing: false,
-        trackAlbum: {},
+        trackAlbu: {},
         trackArtists: [],
         trackId: '',
         trackTitle2: ''
