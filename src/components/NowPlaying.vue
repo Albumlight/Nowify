@@ -129,7 +129,27 @@ export default {
       return `now-playing--${playerClass}`
     },
 
-    
+    /**
+     * Get the colour palette from the album cover.
+     */
+    getAlbumColours() {
+      /**
+       * No image (rare).
+       */
+      if (!this.player.trackAlbum?.image) {
+        return
+      }
+      /**
+       * Run node-vibrant to get colours.
+       */
+      Vibrant.from(this.player.trackAlbum.image)
+        .quality(1)
+        .clearFilters()
+        .getPalette()
+        .then(palette => {
+          this.handleAlbumPalette(palette)
+        })
+    },
 
     /**
      * Return a formatted empty object for an idle player.
@@ -206,8 +226,8 @@ export default {
         trackId: this.playerResponse.item.id,
         artistId: this.playerResponse.item.artists.id,
         trackAlbu: {
-          title: this.playerResponse.item.artists.name,
-          image: this.playerResponse.item.artists[0].images[0].url
+          title: this.playerResponse.item.album.name,
+          image: this.playerResponse.item.album.images[0].url
         }
       }
     },
