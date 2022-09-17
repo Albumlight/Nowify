@@ -136,7 +136,7 @@ export default {
       /**
        * No image (rare).
        */
-      if (!this.player.trackAlbu?.image) {
+      if (!this.player.trackAlbum?.image) {
         return
       }
 
@@ -228,7 +228,7 @@ export default {
         artistId: this.playerResponse.item.artists.id,
         trackAlbu: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.albu.images[0].url
+          image: this.playerResponse.item.artists.images[0].url
         }
       }
     },
