@@ -160,6 +160,7 @@ export default {
         playing: false,
         trackAlbum: {},
         trackArtists: [],
+        artistId: [],
         trackId: '',
         trackTitle2: ''
       }
