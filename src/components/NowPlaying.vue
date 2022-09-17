@@ -7,7 +7,7 @@
     >
    <div class="now-playing__cover">
         <img
-          :src="player.a.image"
+          :src="player.artistId.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -159,7 +159,7 @@ export default {
     getEmptyPlayer() {
       return {
         playing: false,
-        trackId: {},
+        artistId: {},
         trackArtists: [],
         trackId: '',
         trackTitle2: ''
