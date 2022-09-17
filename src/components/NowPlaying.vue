@@ -217,9 +217,9 @@ export default {
        * The newly fetched track is the same as our stored
        * one, we don't want to update the DOM yet.
        */
-      if (this.playerResponse.item?.id === this.playerData.trackId) {
-        return
-      }
+      /if (this.playerResponse.item?.id === this.playerData.trackId) {
+       / return
+      /}
 
       /**
        * Store the current active track.
