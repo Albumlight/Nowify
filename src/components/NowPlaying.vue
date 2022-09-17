@@ -8,7 +8,7 @@
    <div class="now-playing__cover">
         <img
           :src="player.trackAlbum.image"
-          :alt="player.trackTitle"
+          :alt="player.trackTitle2"
           class="now-playing__image"
         />
       </div>
