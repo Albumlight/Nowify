@@ -132,13 +132,7 @@ export default {
     /**
      * Get the colour palette from the album cover.
      */
-    getAlbumColours() {
-      /**
-       * No image (rare).
-       */
-      if (!this.player.trackAlbum?.image) {
-        return
-      }
+    
 
       /**
        * Run node-vibrant to get colours.
@@ -228,7 +222,7 @@ export default {
         artistId: this.playerResponse.item.artists.id,
         trackAlbu: {
           title: this.playerResponse.item.artists.name,
-          image: this.playerResponse.item.artists[0].images.url
+          image: this.playerResponse.item.artists[0].images[0].url
         }
       }
     },
