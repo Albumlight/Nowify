@@ -225,7 +225,7 @@ export default {
         trackTitle2: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
         artistId:  {
-          image: this.playerResponse.item.album[0].images[0]
+          image: this.playerResponse.item.album.images[0]
         },
         trackAlbu: {
           title: this.playerResponse.item.album.name,
