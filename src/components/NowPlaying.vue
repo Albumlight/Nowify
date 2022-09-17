@@ -158,7 +158,7 @@ export default {
     getEmptyPlayer() {
       return {
         playing: false,
-        trackAlbu: {},
+        trackAlbum: {},
         trackArtists: [],
         trackId: '',
         trackTitle2: ''
@@ -227,7 +227,6 @@ export default {
         artistId: this.playerResponse.item.artists.id,
         trackAlbu: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.alb.images[0].url
         }
       }
     },
