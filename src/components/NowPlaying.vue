@@ -136,7 +136,7 @@ export default {
       /**
        * No image (rare).
        */
-      if (!this.player.trackAlbum?.image) {
+      if (!this.player.trackAlbu?.image) {
         return
       }
 
