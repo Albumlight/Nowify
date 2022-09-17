@@ -129,22 +129,7 @@ export default {
       return `now-playing--${playerClass}`
     },
 
-    /**
-     * Get the colour palette from the album cover.
-     */
     
-
-      /**
-       * Run node-vibrant to get colours.
-       */
-      Vibrant.from(this.player.trackAlbu.image)
-        .quality(1)
-        .clearFilters()
-        .getPalette()
-        .then(palette => {
-          this.handleAlbumPalette(palette)
-        })
-    },
 
     /**
      * Return a formatted empty object for an idle player.
