@@ -107,7 +107,7 @@ export default {
         }
 
         data = await response.json()
-        this.playerResponse = data
+        this.artists = data
       } catch (error) {
         this.handleExpiredToken()
 
