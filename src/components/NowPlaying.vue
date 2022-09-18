@@ -232,7 +232,7 @@ export default {
         trackTitle2: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
         artistId:  {
-          image: artists.id.images[0].url
+          image: "https://api.spotify.com/v1/artists/1GJ03RP8m15KzoFVsvRKSx"
         },
         trackAlbu: {
           title: this.playerResponse.item.album.name,
