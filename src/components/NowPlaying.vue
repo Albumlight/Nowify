@@ -230,8 +230,8 @@ export default {
        
     this.playerData = {
   playing: this.playerResponse.is_playing,
-  trackArtists: trackArtists,
-  const trackArtists = this.playerResponse.item.artists.map((artist) => {
+  
+  trackArtists = this.playerResponse.item.artists.map((artist) => {
   return {
     name: artist.name,
     image: artist.images[0].url
