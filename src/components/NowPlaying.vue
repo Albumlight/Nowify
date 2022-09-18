@@ -202,7 +202,11 @@ export default {
 
         return
       }
-
+      
+      image() {
+            if (this.artist.images.length > 0) {
+                return this.artist.images[0].url;
+            }
       /**
        * Player is active, but user has paused.
        */
