@@ -235,28 +235,8 @@ export default {
           image: this.playerResponse.item.album.images[0].url
        }
    }
-};
+},
 
-var artistsCache = {},
-    artistFetching = false;
-spotifyPlayer.on('update', response => {
-  var mainArtist = response.item.artists[0];
-  if (!(mainArtist.id in artistsCache) && !artistFetching) {
-    artistFetching = true;
-    spotifyPlayer.fetchGeneric(mainArtist.href)
-      .then(function(artist) {
-        artistFetching = false;
-        return artist.json();
-      }).then(function(artist) {
-        if (artist.images.length) {
-          artistsCache[artist.id] = artist.images[0].url;
-        }
-      }).catch(function(e) {
-        artistFetching = false;
-      });
-        }
-      }
-    },
 
     /**
      * Handle newly stored colour palette:
