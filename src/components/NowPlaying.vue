@@ -312,7 +312,8 @@ export default {
       })
     }
   }
-},
+}
+}
 </script>
 
 <style src="@/styles/components/now-playing.scss" lang="scss" scoped></style>
