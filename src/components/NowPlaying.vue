@@ -56,7 +56,14 @@ export default {
     getTrackArtists() {
       return this.player.trackArtists.join(', ')
     }
-  },
+    
+     const trackArtists = this.playerResponse.item.artists.map((artist) => {
+  return {
+    name: artist.name,
+    image: artist.images[0].url
+  }
+})
+ },
   
   
 
@@ -152,7 +159,8 @@ export default {
           this.handleAlbumPalette(palette)
         })
     },
-
+    
+   
     
     /**
      * Return a formatted empty object for an idle player.
@@ -230,13 +238,7 @@ export default {
        
     this.playerData = {
   playing: this.playerResponse.is_playing,
-  
-  trackArtists: this.playerResponse.item.artists.map((artist) => {
-  return {
-    name: artist.name,
-    image: artist.images[0].url
-  }
-}),
+  trackArtists: trackArtists,
   trackTitle: this.playerResponse.item.name,
   trackId: this.playerResponse.item.id,
   trackAlbum: {
