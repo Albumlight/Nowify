@@ -153,6 +153,12 @@ export default {
         })
     },
 
+    const trackArtists = this.playerResponse.item.artists.map((artist) => {
+  return {
+    name: artist.name,
+    image: artist.images[0].url
+  }
+})
     /**
      * Return a formatted empty object for an idle player.
      * @return {Object}
@@ -228,18 +234,16 @@ export default {
        */
        
     this.playerData = {
-        playing: this.playerResponse.is_playing,
-        trackArtists: this.playerResponse.item.artists.map(
-          artist => artist.name
-        ),
-        trackTitle: this.playerResponse.item.name,
-        trackId: this.playerResponse.item.id,
-        trackAlbum: {
-          title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.album.images[0].url
-        }
-      }
-    },
+  playing: this.playerResponse.is_playing,
+  trackArtists: trackArtists,
+  trackTitle: this.playerResponse.item.name,
+  trackId: this.playerResponse.item.id,
+  trackAlbum: {
+    title: this.playerResponse.item.album.name,
+    image: this.playerResponse.item.album.images[0].url
+  }
+}
+},
 
 
     /**
