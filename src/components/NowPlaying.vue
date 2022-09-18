@@ -58,11 +58,7 @@ export default {
     }
   },
   
-  image() {
-            if (this.artist.images.length > 0) {
-                return this.artist.images[0].url;
-            }
-           },
+  
 
   mounted() {
     this.setDataInterval()
@@ -231,17 +227,19 @@ export default {
        * Store the current active track.
        */
        
-      this.playerData = {
-      playing: this.playerResponse.is_playing,
-      trackArtists: trackArtists,
-      trackTitle: this.playerResponse.item.name,
-      trackId: this.playerResponse.item.id,
-      trackAlbum: {
-      title: this.playerResponse.item.album.name,
-      image: this.playerResponse.item.album.images[0].url
-  }
-}
-},
+    this.playerData = {
+        playing: this.playerResponse.is_playing,
+        trackArtists: this.playerResponse.item.artists.map(
+          artist => artist.name
+        ),
+        trackTitle: this.playerResponse.item.name,
+        trackId: this.playerResponse.item.id,
+        trackAlbum: {
+          title: this.playerResponse.item.album.name,
+          image: this.playerResponse.item.album.images[0].url
+        }
+      }
+    },
 
 
     /**
