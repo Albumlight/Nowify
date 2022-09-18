@@ -107,7 +107,7 @@ export default {
         }
 
         data = await response.json()
-        this.artists = data
+        this.playerResponse = data
       } catch (error) {
         this.handleExpiredToken()
 
@@ -232,7 +232,7 @@ export default {
         trackId: this.artists.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.artists[0].id.images[0].url
+          image: this.playerResponse.item.album.images[0].url
        }
    }
 },
