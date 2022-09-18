@@ -7,7 +7,7 @@
     >
    <div class="now-playing__cover">
         <img
-          :src="https://i.scdn.co/image/ab6761610000e5eb339314df0ac697fd29257e74"
+          :src="https://api.spotify.com/v1/artists/1GJ03RP8m15KzoFVsvRKSx"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
