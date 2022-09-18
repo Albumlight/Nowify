@@ -229,7 +229,7 @@ export default {
           artist => artist.name
         ),
         trackTitle2: this.playerResponse.item.name,
-        trackId: this.playerResponse.item.id,
+        trackId: this.artists.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
           image: this.artists[0].images[0].url
