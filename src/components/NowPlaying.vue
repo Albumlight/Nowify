@@ -7,7 +7,7 @@
     >
    <div class="now-playing__cover">
         <img
-          :src="image:url"https://api.spotify.com/v1/artists/1GJ03RP8m15KzoFVsvRKSx"
+          :src=
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -233,6 +233,27 @@ export default {
         trackAlbum: {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url
+       }
+   }
+};
+
+var artistsCache = {},
+    artistFetching = false;
+spotifyPlayer.on('update', response => {
+  var mainArtist = response.item.artists[0];
+  if (!(mainArtist.id in artistsCache) && !artistFetching) {
+    artistFetching = true;
+    spotifyPlayer.fetchGeneric(mainArtist.href)
+      .then(function(artist) {
+        artistFetching = false;
+        return artist.json();
+      }).then(function(artist) {
+        if (artist.images.length) {
+          artistsCache[artist.id] = artist.images[0].url;
+        }
+      }).catch(function(e) {
+        artistFetching = false;
+      });
         }
       }
     },
