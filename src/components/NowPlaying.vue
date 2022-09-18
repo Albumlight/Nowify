@@ -57,6 +57,11 @@ export default {
       return this.player.trackArtists.join(', ')
     }
   },
+  
+  image() {
+            if (this.artist.images.length > 0) {
+                return this.artist.images[0].url;
+            },
 
   mounted() {
     this.setDataInterval()
@@ -203,10 +208,7 @@ export default {
         return
       }
       
-      image() {
-            if (this.artist.images.length > 0) {
-                return this.artist.images[0].url;
-            }
+      
       /**
        * Player is active, but user has paused.
        */
