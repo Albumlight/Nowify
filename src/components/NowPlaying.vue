@@ -62,8 +62,8 @@ export default {
     name: artist.name,
     image: artist.images[0].url
   }
-}),
- 
+})
+},
   
   
 
