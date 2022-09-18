@@ -55,7 +55,7 @@ export default {
      */
     getTrackArtists() {
       return this.player.trackArtists.join(', ')
-    }
+    },
     
      const trackArtists = this.playerResponse.item.artists.map((artist) => {
   return {
