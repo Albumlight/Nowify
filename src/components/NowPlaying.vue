@@ -7,7 +7,7 @@
     >
    <div class="now-playing__cover">
         <img
-          :src="artistId.image"
+          :src="https://i.scdn.co/image/ab6761610000e5eb339314df0ac697fd29257e74"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
