@@ -61,7 +61,8 @@ export default {
   image() {
             if (this.artist.images.length > 0) {
                 return this.artist.images[0].url;
-            },
+            }
+           },
 
   mounted() {
     this.setDataInterval()
