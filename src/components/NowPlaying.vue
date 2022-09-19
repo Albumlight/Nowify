@@ -216,7 +216,9 @@ export default {
 
         return
       }
-
+      
+      if (this.artist.id. > 0) {
+          this
        /**
        * The newly fetched track is the same as our stored
        * one, we don't want to update the DOM yet.
@@ -241,7 +243,7 @@ export default {
   ),
   trackAlbum: {
     title: this.playerResponse.item.album.name,
-    image: this.artists[0].id.images.url
+    image: this.artists:0gxyHStUsqpMadRV0Di1Qt.images[0].url
   }
 }
 },
