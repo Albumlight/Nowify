@@ -55,15 +55,8 @@ export default {
      */
     getTrackArtists() {
       return this.player.trackArtists.join(', ')
-    
-    
-     const trackArtists = this.playerResponse.item.artists.map((artist) => {
-  return {
-    name: artist.name,
-    image: artist.images[0].url
-  }
-})
-},
+    }
+    },
   
   
 
@@ -238,7 +231,9 @@ export default {
        
     this.playerData = {
   playing: this.playerResponse.is_playing,
-  trackArtists: trackArtists,
+  trackArtists: this.playerResponse.item.artists.map(
+          artist => artist.name
+        ),
   trackTitle: this.playerResponse.item.name,
   trackId: this.playerResponse.item.id,
   trackAlbum: {
@@ -313,7 +308,7 @@ export default {
     }
   }
 }
-}
+
 </script>
 
 <style src="@/styles/components/now-playing.scss" lang="scss" scoped></style>
