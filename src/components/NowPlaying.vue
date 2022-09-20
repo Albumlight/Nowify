@@ -80,7 +80,7 @@ export default {
        async getTracks => (name);
         const token = await getToken();
 
-        const data = await axios({
+        const dat = await axios({
             baseURL: "https://api.spotify.com/v1/search",
             method: "GET",
             headers: {
