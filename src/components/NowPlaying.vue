@@ -28,6 +28,7 @@
 import * as Vibrant from 'node-vibrant'
 
 import props from '@/utils/props.js'
+import axios from "axios";
 
 export default {
   name: 'NowPlaying',
