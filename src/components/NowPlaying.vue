@@ -76,7 +76,26 @@ export default {
      */
     async getNowPlaying() {
       let data = {}
+      
+       async getTracks(name) {
+        const token = await getToken();
 
+        const data = await axios({
+            baseURL: "https://api.spotify.com/v1/search",
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + token,
+            },
+            params: {
+                q: name,
+                type: "track",
+            },
+        });
+
+        return await data.data.tracks;
+    },
+
+      
       try {
         const response = await fetch(
           `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
