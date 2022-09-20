@@ -76,9 +76,6 @@ export default {
     async getNowPlaying() {
       let data = {}
       
-       
-
-      
       try {
         const response = await fetch(
           `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
