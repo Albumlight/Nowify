@@ -28,7 +28,6 @@
 import * as Vibrant from 'node-vibrant'
 
 import props from '@/utils/props.js'
-import axios from "axios";
 
 export default {
   name: 'NowPlaying',
@@ -77,23 +76,7 @@ export default {
     async getNowPlaying() {
       let data = {}
       
-       async getTracks => (name);
-        const token = await getToken();
-
-        const dat = await axios({
-            baseURL: "https://api.spotify.com/v1/search",
-            method: "GET",
-            headers: {
-                Authorization: "Bearer " + token,
-            },
-            params: {
-                q: name,
-                type: "track",
-            },
-        });
-
-        return await data.data.tracks;
-    },
+       
 
       
       try {
