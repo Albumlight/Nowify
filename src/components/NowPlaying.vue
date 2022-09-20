@@ -217,8 +217,7 @@ export default {
         return
       }
       
-      if (this.artist.id. > 0) {
-          this
+     
        /**
        * The newly fetched track is the same as our stored
        * one, we don't want to update the DOM yet.
