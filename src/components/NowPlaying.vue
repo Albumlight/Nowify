@@ -242,7 +242,7 @@ export default {
   ),
   trackAlbum: {
     title: this.playerResponse.item.album.name,
-    image: this.artist('0gxyHStUsqpMadRV0Di1Qt').images[0].url
+    image: this.artists('0gxyHStUsqpMadRV0Di1Qt').images[0].url
   }
 }
 },
