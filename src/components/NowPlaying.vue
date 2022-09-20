@@ -77,7 +77,7 @@ export default {
     async getNowPlaying() {
       let data = {}
       
-       async getTracks => (name) {
+       async getTracks => (name);
         const token = await getToken();
 
         const data = await axios({
