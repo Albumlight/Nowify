@@ -39,7 +39,7 @@ export default {
       playerResponse: {},
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
-      swatches: []
+      swatches: [],
       ArtistResponse: {},
     }
   },
