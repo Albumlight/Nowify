@@ -66,7 +66,7 @@ export default {
       let data = {}
       try {
         const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
           {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
