@@ -228,14 +228,12 @@ export default {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.album.images[0].url
+          image: this.playerResponse.item.album.images[0].url
         }
       }
     },
     
-     
-     
-    /**
+     /**
      * Handle newly stored colour palette:
      * - Map data to readable format
      * - Get and store random colour combination.
