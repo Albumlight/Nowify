@@ -40,6 +40,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: []
+      ArtistResponse: {},
     }
   },
   computed: {
