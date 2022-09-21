@@ -62,7 +62,7 @@ export default {
      * Make the network request to Spotify to
      * get the current played track.
      */
-    async getNowPlaying2() {
+    async getNowPlaying() {
       let data = {}
       try {
         const response = await fetch(
