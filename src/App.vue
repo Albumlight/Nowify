@@ -63,7 +63,7 @@ export default {
      * @return {String}
      */
     getCurrentComponent() {
-      return this.auth.status === false ? 'Authorise' : 'ArtistArt'
+      return this.auth.status === false ? 'Authorise' : 'NowPlaying' 
     }
   },
 
