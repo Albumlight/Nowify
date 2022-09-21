@@ -203,7 +203,7 @@ export default {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.album.images[0].url
+          image: this.artist('62sPt3fswraiEPnKQpAbdE').images[0].url
         }
       }
     },
