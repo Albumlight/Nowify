@@ -153,7 +153,7 @@ export default {
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
         this.getNowPlaying()
-      }, 2500)
+      }, 10000)
     },
     /**
      * Set the stylings of the app based on received colours.
