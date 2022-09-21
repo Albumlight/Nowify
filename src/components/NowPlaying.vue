@@ -85,9 +85,7 @@ export default {
          */
         if (response.status === 204) {
           this.playerData = data
-          this.$nextTick(() => {
-            this.$emit('spotifyTrackUpdated', data)
-          })
+         }
           return
         }
         data = await response.json()
