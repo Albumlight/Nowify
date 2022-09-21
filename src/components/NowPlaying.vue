@@ -66,7 +66,7 @@ export default {
       let data = {}
       try {
         const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
+          `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
           {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
@@ -203,7 +203,7 @@ export default {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.artist('62sPt3fswraiEPnKQpAbdE').images[0].url
+          image: this.playerResponse.item.album.images[0].url
         }
       }
     },
