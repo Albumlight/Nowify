@@ -66,7 +66,7 @@ export default {
       let data = {}
       try {
         const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
           {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
@@ -84,7 +84,6 @@ export default {
          * The connection was successful but there's no content to return.
          */
         if (response.status === 204) {
-          data = this.getEmptyPlayer()
           this.playerData = data
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
