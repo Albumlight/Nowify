@@ -103,6 +103,30 @@ export default {
         })
       }
     },
+    
+    async getData() {
+      let data = {}
+      try {
+        const response = await fetch(
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
+          {
+            headers: {
+              Authorization: `Bearer ${this.auth.accessToken}`
+            }
+          }
+        )
+        
+        data = await response.json()
+        this.playerResponse = data
+      } catch (error) {
+        this.handleExpiredToken()
+        data = this.getEmptyPlayer()
+        this.playerData = data
+        this.$nextTick(() => {
+          this.$emit('spotifyTrackUpdated', data)
+        })
+      }
+    },
     /**
      * Get the Now Playing element class.
      * @return {String}
