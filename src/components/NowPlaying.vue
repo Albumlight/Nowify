@@ -118,7 +118,7 @@ export default {
         )
         
         data = await response.json()
-        this.playerResponse = data
+        this.ArtistResponse = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
@@ -229,10 +229,13 @@ export default {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.artist.images[0].url
+          image: this.playerResponse.album.images[0].url
         }
       }
     },
+    
+     
+     
     /**
      * Handle newly stored colour palette:
      * - Map data to readable format
