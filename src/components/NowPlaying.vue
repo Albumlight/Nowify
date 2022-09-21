@@ -66,7 +66,7 @@ export default {
       let data = {}
       try {
         const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
+          `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
           {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
@@ -89,12 +89,10 @@ export default {
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
           })
-          
           return
         }
-        
         data = await response.json()
-        this.playerData = data
+        this.playerResponse = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
@@ -153,7 +151,7 @@ export default {
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
         this.getNowPlaying()
-      }, 10000)
+      }, 2500)
     },
     /**
      * Set the stylings of the app based on received colours.
@@ -205,7 +203,7 @@ export default {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.artist.images[0].url
+          image: this.playerResponse.item.album.images[0].url
         }
       }
     },
@@ -267,5 +265,4 @@ export default {
   }
 }
 </script>
-
 <style src="@/styles/components/now-playing.scss" lang="scss" scoped></style>
