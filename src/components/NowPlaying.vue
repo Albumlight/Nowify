@@ -251,10 +251,10 @@ export default {
           image: this.playerResponse.item.album.images[0].url
         }
       }
-    },
     
      this.ArtistData = {
      Plaatje: this.artist.images[0].url
+     }
      },
      /**
      * Handle newly stored colour palette:
