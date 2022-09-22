@@ -235,7 +235,7 @@ export default {
         }
       }
     
-     this.ArtistData = {
+     this.artistData = {
      Plaatje: {
           
           image: this.artists.map
