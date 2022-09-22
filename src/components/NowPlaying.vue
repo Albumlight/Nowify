@@ -122,13 +122,13 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    },
+    }
   },
     
     created() {
     this.getData();
-  },
-};
+  }
+},
     /**
      * Get the Now Playing element class.
      * @return {String}
