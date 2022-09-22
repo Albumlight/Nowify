@@ -129,7 +129,7 @@ export default {
          */
         if (response.status === 204) {
           data = this.getEmptyPlayer()
-          this.playerData = data
+          this.artistData = data
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
           })
@@ -140,7 +140,7 @@ export default {
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
-        this.playerData = data
+        this.artistData = data
         this.$nextTick(() => {
           this.$emit('spotifyTrackUpdated', data)
         })
@@ -253,6 +253,9 @@ export default {
       }
     },
     
+     this.ArtistData = {
+     Plaatje: this.artist.images[0].url
+     },
      /**
      * Handle newly stored colour palette:
      * - Map data to readable format
