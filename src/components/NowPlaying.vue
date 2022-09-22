@@ -40,6 +40,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: [],
+      artists: [],
      }
   },
   computed: {
@@ -117,7 +118,7 @@ export default {
         )
         
         data = await response.json()
-        this.playerResponse = data
+        this.artists = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
