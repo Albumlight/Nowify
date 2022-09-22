@@ -120,13 +120,10 @@ export default {
         data = await response.json()
         this.artists = data
       } catch (error) {
-        this.handleExpiredToken()
-        data = this.getEmptyPlayer()
-        this.playerData = data
-        this.$nextTick(() => {
-          this.$emit('spotifyTrackUpdated', data)
-        })
+        console.log(error);
       }
+    }
+  },
     },
     /**
      * Get the Now Playing element class.
