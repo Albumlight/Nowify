@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="player.trackAlbum.image"
+          :src="plaatje.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -236,7 +236,7 @@ export default {
       }
     
      this.artistData = {
-     Plaatje: {
+     plaatje: {
           
           image: this.artists.map
           (artist => artist.images[0].url
