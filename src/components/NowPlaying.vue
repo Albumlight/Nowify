@@ -255,7 +255,9 @@ export default {
      this.ArtistData = {
      Plaatje: {
           
-          image: this.artist.images[0].url
+          image: this.artists.map
+          (artist => artist.images[0].url
+          ),
         }
      }
      },
