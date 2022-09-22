@@ -117,14 +117,18 @@ export default {
           }
         )
         
-        data = await response.json()
-        this.artists = data
+        this.artists = await response.json()
+        this.artists = data;;
       } catch (error) {
         console.log(error);
       }
-    }
+    },
   },
-    };
+    
+    created() {
+    this.getData();
+  },
+};
     /**
      * Get the Now Playing element class.
      * @return {String}
