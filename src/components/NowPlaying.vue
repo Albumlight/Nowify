@@ -253,7 +253,7 @@ export default {
       }
     
      this.ArtistData = {
-     Plaatje:: {
+     Plaatje: {
           
           image: this.artist.images[0].url
         }
