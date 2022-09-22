@@ -253,7 +253,10 @@ export default {
       }
     
      this.ArtistData = {
-     Plaatje: this.artist.images[0].url
+     Plaatje:: {
+          
+          image: this.artist.images[0].url
+        }
      }
      },
      /**
