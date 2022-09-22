@@ -117,24 +117,7 @@ export default {
           }
         )
         
-        /**
-         * Fetch error.
-         */
-        if (!response.ok) {
-          throw new Error(`An error has occured: ${response.status}`)
-        }
-        /**
-         * Spotify returns a 204 when no current device session is found.
-         * The connection was successful but there's no content to return.
-         */
-        if (response.status === 204) {
-          data = this.getEmptyPlayer()
-          this.artistData = data
-          this.$nextTick(() => {
-            this.$emit('spotifyTrackUpdated', data)
-          })
-          return
-        }
+        
         data = await response.json()
         this.artist = data
       } catch (error) {
