@@ -124,7 +124,7 @@ export default {
       }
     }
   },
-    },
+    };
     /**
      * Get the Now Playing element class.
      * @return {String}
