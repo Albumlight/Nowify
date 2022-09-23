@@ -124,7 +124,7 @@ export default {
         data = await response.json()
         this.artistsData = data
         
-        console.log(response),
+        console.log(response)
       } catch (error) {
         console.log(error)
       }
