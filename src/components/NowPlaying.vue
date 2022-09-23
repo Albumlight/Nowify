@@ -112,7 +112,7 @@ export default {
      * Get the Now Playing element class.
      * @return {String}
      */
-    getNowPlayingClass() {
+    getArtistArtClass() {
       const playerClass = this.player.playing ? 'active' : 'idle'
       return `now-playing--${playerClass}`
     },
