@@ -119,6 +119,9 @@ export default {
           }
         )
         
+        if (!response.ok) {
+          throw new Error(`An error has occured: ${response.status}`)
+        }
         
         this.artists = await response.json()
         
