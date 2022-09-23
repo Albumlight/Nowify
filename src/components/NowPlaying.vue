@@ -125,7 +125,7 @@ export default {
         this.artistsData = data
         this.$nextTick(() => {
           this.$emit('spotifyTrackUpdated', data)
-        console.log(response)
+        console.log(response),
       } catch (error) {
         console.log(error)
       }
