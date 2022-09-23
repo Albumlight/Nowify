@@ -303,6 +303,7 @@ export default {
     },
     /**
      * Watch our locally stored track data.
+     * Haal data voor artistimage op.
      */
     playerData: function() {
       this.$emit('spotifyTrackUpdated', this.playerData)
