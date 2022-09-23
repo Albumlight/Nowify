@@ -107,6 +107,16 @@ export default {
         })
       }
     },
+    
+    /**
+     * Get the Now Playing element class.
+     * @return {String}
+     */
+      getNowPlayingClass() {
+      const playerClass = this.player.playing ? 'active' : 'idle'
+      return `now-playing--${playerClass}`
+    },
+    /**
 
      async getArtistImage() {
       let data = {}
@@ -148,15 +158,7 @@ export default {
     
   
 
-    /**
-     * Get the Now Playing element class.
-     * @return {String}
-     */
-      getNowPlayingClass() {
-      const playerClass = this.player.playing ? 'active' : 'idle'
-      return `now-playing--${playerClass}`
-    },
-    /**
+    
      * Get the colour palette from the album cover.
      */
     getAlbumColours() {
