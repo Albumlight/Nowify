@@ -27,7 +27,8 @@
 import * as Vibrant from 'node-vibrant'
 import props from '@/utils/props.js'
 export default {
-  name: 'NowPlaying',
+  name: 'NowPlaying'
+  name: 'ArtistArt',
   props: {
     auth: props.auth,
     endpoints: props.endpoints,
