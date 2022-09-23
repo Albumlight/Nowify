@@ -123,6 +123,16 @@ export default {
           throw new Error(`An error has occured: ${response.status}`)
         }
         
+        if (response.status === 204) {
+          data = this.getEmptyPlayer()
+          this.playerData = data
+          this.$nextTick(() => {
+            this.$emit('spotifyTrackUpdated', data)
+          })
+          return
+        }
+
+        
         this.artists = await response.json()
         
         
