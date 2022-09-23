@@ -120,7 +120,7 @@ export default {
         
         data = await response.json()
         this.artists = data
-        
+        console.log("Do what you want after completing the prev job.");
       } catch (error) {
         console.log(error)
       }
