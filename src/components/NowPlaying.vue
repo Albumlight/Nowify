@@ -59,9 +59,7 @@ export default {
     clearInterval(this.pollPlaying)
   },
   
-   created() {
-    this.getartists()
-  },
+  
 
   methods: {
     /**
@@ -130,6 +128,10 @@ export default {
         console.log(error)
       }
     },
+    
+     created() {
+    this.getartists()
+  },
 
     /**
      * Get the Now Playing element class.
