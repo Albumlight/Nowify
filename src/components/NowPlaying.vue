@@ -232,7 +232,7 @@ export default {
       }
     
      this.artistData = {
-     naam: this.artists[0].name
+     naam: this.artists.name
       }
      },
      /**
