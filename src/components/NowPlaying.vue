@@ -109,7 +109,7 @@ export default {
     },
     
      async getArtistImage() {
-      let data = {}
+      let response = {}
       try {
         const response = await fetch(
           `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
