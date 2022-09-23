@@ -231,13 +231,8 @@ export default {
       }
     
      this.artistData = {
-     plaatje: {
-          
-          image: this.artists.map
-          (artist => artist.images[0].url
-          ),
-        }
-     }
+     plaatje: this.artists[0].images[0].url
+      }
      },
      /**
      * Handle newly stored colour palette:
