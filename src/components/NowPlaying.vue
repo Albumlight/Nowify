@@ -111,8 +111,8 @@ export default {
      async getArtistImage() {
       let data = {}
       try {
-        const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
+        const response = await fetch(("http://jsonplaceholder.typicode.com/posts"),
+          
           {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
