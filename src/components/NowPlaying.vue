@@ -118,7 +118,7 @@ export default {
     },
     
 
-     async getArtistImage() {
+     async getData() {
       let data = {}
       try {
         const response = await fetch(
@@ -194,7 +194,7 @@ export default {
     setDataInterval() {
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
-        this.getNowPlaying()
+        this.getData()
       }, 2500)
     },
     /**
