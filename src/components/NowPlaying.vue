@@ -126,7 +126,7 @@ export default {
         
         if (response.status === 204) {
           data = this.getEmptyPlayer()
-          this.playerData = data
+          this.artistData = data
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
           })
@@ -134,11 +134,11 @@ export default {
         }
 
         data = await response.json()
-        this.artistData = data
+        this.artists = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
-        this.playerData = data
+        this.artistData = data
         this.$nextTick(() => {
           this.$emit('spotifyTrackUpdated', data)
         })
@@ -146,9 +146,7 @@ export default {
     },
        
     
-     created() {
-    this.getArtistImage()
-  },
+  
 
     /**
      * Get the Now Playing element class.
