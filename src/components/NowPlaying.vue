@@ -98,6 +98,7 @@ export default {
         }
         data = await response.json()
         this.playerResponse = data
+        console.log(response)
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
