@@ -133,15 +133,18 @@ export default {
           return
         }
 
-        
-        this.artists = await response.json()
-        
-        
-        console.log(response)
+        data = await response.json()
+        this.artistData = data
       } catch (error) {
-        console.log(error)
+        this.handleExpiredToken()
+        data = this.getEmptyPlayer()
+        this.playerData = data
+        this.$nextTick(() => {
+          this.$emit('spotifyTrackUpdated', data)
+        })
       }
     },
+       
     
      created() {
     this.getArtistImage()
