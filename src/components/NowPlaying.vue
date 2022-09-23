@@ -27,7 +27,7 @@
 import * as Vibrant from 'node-vibrant'
 import props from '@/utils/props.js'
 export default {
-  name: 'NowPlaying'
+  name: 'NowPlaying',
   name: 'ArtistArt',
   props: {
     auth: props.auth,
@@ -112,9 +112,9 @@ export default {
      async getArtistImage() {
       let data = {}
       try {
-        const response = await fetch(("http://jsonplaceholder.typicode.com/posts"),
-          
-          {
+        const response = await fetch(
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
+            {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
             }
