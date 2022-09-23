@@ -60,7 +60,7 @@ export default {
   },
   
    created() {
-    this.artists()
+    this.getartists()
   },
 
   methods: {
