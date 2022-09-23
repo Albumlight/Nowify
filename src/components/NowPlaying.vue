@@ -156,8 +156,7 @@ export default {
     },
        
     
-     * Get the colour palette from the album cover.
-     */
+     
     getAlbumColours() {
       /**
        * No image (rare).
