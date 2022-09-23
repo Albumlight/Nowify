@@ -58,6 +58,11 @@ export default {
   beforeDestroy() {
     clearInterval(this.pollPlaying)
   },
+  
+   created() {
+    this.artists()
+  },
+
   methods: {
     /**
      * Make the network request to Spotify to
