@@ -123,10 +123,9 @@ export default {
         
         data = await response.json()
         this.artistsData = data
-        this.$nextTick(() => {
-          this.$emit('spotifyTrackUpdated', data)
+        
         console.log(response),
-       catch (error) {
+      } catch (error) {
         console.log(error)
       }
     },
