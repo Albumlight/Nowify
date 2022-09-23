@@ -111,7 +111,7 @@ export default {
      async getArtistImage() {
       let response = {}
       try {
-        const response = await fetch(
+        let response = await fetch(
           `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
           {
             headers: {
