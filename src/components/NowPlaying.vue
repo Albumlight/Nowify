@@ -72,7 +72,7 @@ export default {
       let data = {}
       try {
         const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
             {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
@@ -156,7 +156,7 @@ export default {
     setDataInterval() {
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
-        this.getNowPlaying()
+        this.getArtistArt()
       }, 2500)
     },
     /**
