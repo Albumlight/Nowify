@@ -134,25 +134,12 @@ export default {
           throw new Error(`An error has occured: ${response.status}`)
         }
         
-        if (response.status === 204) {
-          data = this.getEmptyPlayer()
-          this.data = data
-          this.$nextTick(() => {
-            this.$emit('spotifyTrackUpdated', data)
-          })
-          return
-        }
+       
 
         data = await response.json()
         this.data = data
         console.log(response)
-      } catch (error) {
-        this.handleExpiredToken()
-        data = this.getEmptyPlayer()
-        this.artistData = data
-        this.$nextTick(() => {
-          this.$emit('spotifyTrackUpdated', data)
-        })
+     
       }
     },
        
