@@ -40,7 +40,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: [],
-      dataResponse: {}
+      data: []
      }
   },
   computed: {
