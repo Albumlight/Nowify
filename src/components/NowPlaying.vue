@@ -238,7 +238,7 @@ export default {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url
         }
-      }
+      },
     
      this.Data = {
      image: this.artistsResponse.item.artist[0].images[0].url
