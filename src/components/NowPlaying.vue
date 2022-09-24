@@ -42,7 +42,7 @@ export default {
       colourPalette: '',
       swatches: [],
       artistsResponse: {},
-      artistData: {}
+      artistData: []
      }
   },
   computed: {
@@ -241,7 +241,7 @@ export default {
       },
     
      this.Data = {
-     image: this.artistsResponse.item.images[0].url
+     image: this.artistsResponse.images[0].url
       }
      },
      /**
