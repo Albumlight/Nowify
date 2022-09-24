@@ -119,7 +119,7 @@ export default {
     },
     
 
-     async getData() {
+     async getArtists(id) {
       let data = {}
       try {
         const response = await fetch(
@@ -309,7 +309,7 @@ export default {
     playerData: function() {
       this.$emit('spotifyTrackUpdated', this.playerData)
       this.$nextTick(() => {
-        this.getData()
+        this.getArtists()
       })
     }
   }
