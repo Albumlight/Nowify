@@ -252,7 +252,7 @@ export default {
         }
       }
     
-     this.artistData = {
+     this.Data = {
      naam: this.artist.images[0].url
       }
      },
