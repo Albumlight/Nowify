@@ -136,7 +136,8 @@ export default {
         console.log(error)
       }
        },
-       created() {
+      
+      created() {
     this.getArtists()
   }
 },
