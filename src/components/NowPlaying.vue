@@ -127,21 +127,13 @@ export default {
       try {
         const response = await fetch(
           `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
-            
-        )
+           )
         
         if (!response.ok) {
           throw new Error(`An error has occured: ${response.status}`)
         }
         
-        if (response.status === 204) {
-          data = this.getEmptyPlayer()
-          this.artistData = data
-          this.$nextTick(() => {
-            this.$emit('spotifyTrackUpdated', data)
-          })
-          return
-        }
+        
 
         data = await response.json()
         this.Artists = data
