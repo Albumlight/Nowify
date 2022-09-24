@@ -142,18 +142,18 @@ export default {
          */
         if (response.status === 204) {
           data = this.getEmptyPlayer()
-          this.playerData = data
+          this.artistsData = data
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
           })
           return
         }
         data = await response.json()
-        this.data = data
+        this.dataResponse = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
-        this.playerData = data
+        this. artistsData = data
         this.$nextTick(() => {
           this.$emit('spotifyTrackUpdated', data)
         })
@@ -258,7 +258,7 @@ export default {
       }
     
      this.artistsData = {
-     naam: this.artists.name
+     naam: this.dataResponse.name
       }
      },
      /**
