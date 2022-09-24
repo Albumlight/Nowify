@@ -40,7 +40,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: [],
-      data: []
+      dataResponse: []
      }
   },
   computed: {
@@ -150,7 +150,7 @@ export default {
         }
         data = await response.json()
         console.log(response)
-        this.images = data
+        this.dataResponse = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
@@ -259,7 +259,7 @@ export default {
       }
     
      this.artistsData = {
-     image: this.data.images[0].url
+     image: this.dataResponse.images[0].url
       }
      },
      /**
