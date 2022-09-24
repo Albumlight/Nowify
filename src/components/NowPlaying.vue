@@ -125,18 +125,15 @@ export default {
      async getArtists() {
       try {
         let response = await fetch(`${this.endpoints.base}/${this.endpoints.nowPlaying}`,)
-        this.posts = await response.json()
+        this.data = await response.json()
       } catch (error) {
         console.log(error)
       }
     }
   },
 
-  created() {
-    this.getData()
-  }
-  }
-},
+ 
+
       
        
     
