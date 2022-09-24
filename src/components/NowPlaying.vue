@@ -41,7 +41,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: [],
-      artists: {},
+      artistsResponse: {},
       artistData: {}
      }
   },
@@ -241,7 +241,7 @@ export default {
       }
     
      this.Data = {
-     naam: this.artist.images[0].url
+     image: this.artistsResponse.images[0].url
       }
      },
      /**
