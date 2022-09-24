@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="player.trackAlbum.image"
+          :src="data.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -258,7 +258,7 @@ export default {
       }
     
      this.artistsData = {
-     naam: this.dataResponse.name
+     image: this.data.images[0].url
       }
      },
      /**
