@@ -241,7 +241,7 @@ export default {
       },
     
      this.Data = {
-     image: this.artistsResponse.images[0].url
+     image: this.artistsResponse.name
       }
      },
      /**
