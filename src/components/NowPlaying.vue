@@ -31,7 +31,7 @@ export default {
   props: {
     auth: props.auth,
     endpoints: props.endpoints,
-    player: props.player
+    player: props.player,
     artist: Object
   },
   data() {
