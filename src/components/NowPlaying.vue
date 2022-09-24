@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="artistsResponse.image"
+          :src="player.trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -31,8 +31,7 @@ export default {
   props: {
     auth: props.auth,
     endpoints: props.endpoints,
-    player: props.player,
-    artist: Object
+    player: props.player
   },
   data() {
     return {
@@ -41,8 +40,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: [],
-      artistsResponse: {},
-      artistData: []
+      artists: []
      }
   },
   computed: {
@@ -93,13 +91,11 @@ export default {
         if (response.status === 204) {
           data = this.getEmptyPlayer()
           this.playerData = data
-          
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
           })
           return
         }
-          
         data = await response.json()
         this.playerResponse = data
       } catch (error) {
@@ -122,19 +118,42 @@ export default {
     },
     
 
-     async getArtists() {
+     async getData() {
+      let data = {}
       try {
-        let response = await fetch(`${this.endpoints.base}/${this.endpoints.nowPlaying}`,)
-        this.data = await response.json()
+        const response = await fetch(
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
+            {
+            headers: {
+              Authorization: `Bearer ${this.auth.accessToken}`
+            }
+          }
+        )
+        
+        if (!response.ok) {
+          throw new Error(`An error has occured: ${response.status}`)
+        }
+        
+        if (response.status === 204) {
+          data = this.getEmptyPlayer()
+          this.artistData = data
+          this.$nextTick(() => {
+            this.$emit('spotifyTrackUpdated', data)
+          })
+          return
+        }
+
+        data = await response.json()
+        this.artists = data
       } catch (error) {
-        console.log(error)
+        this.handleExpiredToken()
+        data = this.getEmptyPlayer()
+        this.artistData = data
+        this.$nextTick(() => {
+          this.$emit('spotifyTrackUpdated', data)
+        })
       }
-    }
-  },
-
- 
-
-      
+    },
        
     
      
@@ -175,7 +194,7 @@ export default {
     setDataInterval() {
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
-        this.getNowPlaying()
+        this.getData()
       }, 2500)
     },
     /**
@@ -230,10 +249,10 @@ export default {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url
         }
-      },
+      }
     
-     this.Data = {
-     image: this.artistsResponse.name
+     this.artistData = {
+     naam: this.artists.name
       }
      },
      /**
@@ -284,12 +303,11 @@ export default {
     },
     /**
      * Watch our locally stored track data.
-     * Haal data voor artistimage op.
      */
     playerData: function() {
       this.$emit('spotifyTrackUpdated', this.playerData)
       this.$nextTick(() => {
-        this.getArtists()
+        this.getAlbumColours()
       })
     }
   }
