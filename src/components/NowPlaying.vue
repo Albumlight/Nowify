@@ -149,7 +149,7 @@ export default {
           return
         }
         data = await response.json()
-        this.1GJ03RP8m15KzoFVsvRKSx = data
+        this.'1GJ03RP8m15KzoFVsvRKSx' = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
