@@ -131,10 +131,6 @@ export default {
           }
         )
         
-        if (!response.ok) {
-          throw new Error(`An error has occured: ${response.status}`)
-        }
-        
         data = await response.json()
         this.data = data
         console.log(response)
