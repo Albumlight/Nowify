@@ -149,11 +149,12 @@ export default {
           return
         }
         data = await response.json()
+        console.log(response)
         this.images = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
-        this. artistsData = data
+        this.artistsData = data
         this.$nextTick(() => {
           this.$emit('spotifyTrackUpdated', data)
         })
