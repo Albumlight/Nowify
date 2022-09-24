@@ -123,7 +123,7 @@ export default {
       
       try {
         const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
           {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
@@ -149,7 +149,7 @@ export default {
           return
         }
         data = await response.json()
-        this.playerResponse = data
+        this.data = data
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
@@ -257,7 +257,7 @@ export default {
         }
       }
     
-     this.artistData = {
+     this.artistsData = {
      naam: this.artists.name
       }
      },
