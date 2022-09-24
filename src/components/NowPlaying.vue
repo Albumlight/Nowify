@@ -259,7 +259,7 @@ export default {
       }
     
      this.artistsData = {
-     image: this.images[0].url
+     image: this.data.images[0].url
       }
      },
      /**
