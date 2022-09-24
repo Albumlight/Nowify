@@ -145,6 +145,7 @@ export default {
 
         data = await response.json()
         this.data = data
+        console.log(response)
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
@@ -194,7 +195,7 @@ export default {
     setDataInterval() {
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
-        this.getData()
+        this.getNowPlaying()
       }, 2500)
     },
     /**
@@ -307,7 +308,7 @@ export default {
     playerData: function() {
       this.$emit('spotifyTrackUpdated', this.playerData)
       this.$nextTick(() => {
-        this.getAlbumColours()
+        this.getData()
       })
     }
   }
