@@ -94,7 +94,12 @@ export default {
           data = this.getEmptyPlayer()
           this.playerData = data
           
+          this.$nextTick(() => {
+            this.$emit('spotifyTrackUpdated', data)
+          })
+          return
         }
+          
         data = await response.json()
         this.playerResponse = data
       } catch (error) {
