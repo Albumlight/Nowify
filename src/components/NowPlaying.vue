@@ -129,7 +129,7 @@ export default {
           `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
             {
             headers: {
-              Authorization: `Bearer ${this.auth.accessToken}`
+              Authorization: `Bearer ${this.auth.accessToke}`
             }
           }
         )
