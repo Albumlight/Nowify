@@ -139,12 +139,8 @@ export default {
         this.Artists = data
         console.log(response)
       } catch (error) {
-        this.handleExpiredToken()
-        data = this.getEmptyPlayer()
-        this.artistData = data
-        this.$nextTick(() => {
-          this.$emit('spotifyTrackUpdated', data)
-        })
+        console.log(error)
+      }
       }
     },
        
