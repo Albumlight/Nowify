@@ -119,7 +119,7 @@ export default {
     },
     
 
-     async getArtists(id) {
+     async getArtists() {
       let data = {}
       try {
         const response = await fetch(
