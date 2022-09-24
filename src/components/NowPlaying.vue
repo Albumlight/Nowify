@@ -120,6 +120,7 @@ export default {
 
      async getData() {
       let data = {}
+      
       try {
         const response = await fetch(
           `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
@@ -140,7 +141,7 @@ export default {
         this.data = data
         console.log(response)
      
-      }
+      
     },
        
     
