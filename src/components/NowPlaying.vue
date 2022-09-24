@@ -129,20 +129,17 @@ export default {
           `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
            )
         
-        if (!response.ok) {
-          throw new Error(`An error has occured: ${response.status}`)
-        }
-        
-        
-
         data = await response.json()
         this.ArtistsResponse = data
-        console.log(ArtistsResponse)
+        console.log()
       } catch (error) {
         console.log(error)
       }
-       
-    },
+       },
+       created() {
+    this.getArtists()
+  }
+},
        
     
      
