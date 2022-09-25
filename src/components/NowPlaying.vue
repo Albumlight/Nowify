@@ -308,7 +308,7 @@ export default {
       this.handleNowPlaying()
     },
     dataResponse: function() {
-    this.handleNowPlaying()
+    this.handleData()
     },
     /**
      * Watch our locally stored track data.
