@@ -41,7 +41,6 @@ export default {
       colourPalette: '',
       swatches: [],
       dataResponse: [],
-      users: null,
      }
   },
   computed: {
@@ -307,6 +306,9 @@ export default {
      */
     playerResponse: function() {
       this.handleNowPlaying()
+    },
+    dataResponse: function() {
+    this.handleNowPlaying()
     },
     /**
      * Watch our locally stored track data.
