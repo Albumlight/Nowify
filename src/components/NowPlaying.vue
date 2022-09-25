@@ -149,7 +149,12 @@ this.playerResponse = {
       
       try {
         const response = await fetch(
-         "https://reqres.in/api/users"
+          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
+          {
+            headers: {
+              Authorization: `Bearer ${this.auth.accessToken}`
+            }
+          }
         )
         
         const { data: users } = await response.json()
