@@ -129,7 +129,7 @@ export default {
          "https://reqres.in/api/users"
         )
         
-        const { data: users } = await response.json()
+        const { support: users } = await response.json()
         console.log(response)
         this.users = users
       } catch (error) {
