@@ -121,7 +121,7 @@ export default {
     },
     
 
-     async getData() {
+     async created() {
       let data = {}
       
       try {
@@ -296,7 +296,7 @@ export default {
     playerData: function() {
       this.$emit('spotifyTrackUpdated', this.playerData)
       this.$nextTick(() => {
-        this.getData()
+        this.created()
       })
     }
   }
