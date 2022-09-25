@@ -41,6 +41,7 @@ export default {
       colourPalette: '',
       swatches: [],
       dataResponse: [],
+      images: [],
      }
   },
   computed: {
@@ -308,7 +309,7 @@ export default {
       this.handleNowPlaying()
     },
     dataResponse: function() {
-    this.handleData()
+    this.handleNowPlaying()
     },
     /**
      * Watch our locally stored track data.
