@@ -112,7 +112,7 @@ const artistId = data.item.artists[0].id
 const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.artists}/${artistId}`,
  {
             headers: {
-              Authorization: `Bearer ${this.aut.accessToken}`
+              Authorization: `Bearer ${this.auth.accessToken}`
             }
           }
          )
