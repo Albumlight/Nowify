@@ -14,7 +14,7 @@
       </div>
       <div class="now-playing__details">
         <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
-        <h2 class="now-playing__artists" v-text="1GJ03RP8m15KzoFVsvRKSx"></h2>
+        <h2 class="now-playing__artists" v-text="trackTitle"></h2>
       </div>
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
@@ -135,9 +135,9 @@ export default {
           }
         )
         
-        const { genres: 1GJ03RP8m15KzoFVsvRKSx } = await response.json()
+        const { data: users } = await response.json()
         console.log(response)
-        this.1GJ03RP8m15KzoFVsvRKSx = 1GJ03RP8m15KzoFVsvRKSx
+        this.users = users
       } catch (error) {
         console.log(error)
         
