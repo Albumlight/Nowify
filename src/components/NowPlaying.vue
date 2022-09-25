@@ -138,9 +138,7 @@ export default {
         console.log(response)
         this.art = data
       } catch (error) {
-        this.handleExpiredToken()
-        data = this.getEmptyPlayer()
-        this.data = data
+        console.log(error)
         
       }
     },
