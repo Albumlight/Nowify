@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="dataResponse.image.image"
+          :src="data.image.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
