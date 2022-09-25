@@ -121,14 +121,24 @@ export default {
       return `now-playing--${playerClass}`
     },
     
-
-     async created () {
-    const response = await fetch("https://reqres.in/api/users")
-    const { data: users } = await response.json()
-    this.users = users
-  }
-  }
-},
+     async created() {
+      let data = {}
+      
+      try {
+        const response = await fetch(
+         "https://reqres.in/api/users"
+        )
+        
+        const { data: users } = await response.json()
+        console.log(response)
+        this.users = users
+      } catch (error) {
+        console.log(error)
+        
+      }
+      return await data.data;
+    },
+    
     
      
     getAlbumColours() {
