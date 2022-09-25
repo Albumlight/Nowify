@@ -260,6 +260,9 @@ this.playerResponse = {
         trackAlbum: {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url
+          }
+        ArtistArt: {
+          image: this.playerResponse.item.artist.images[0].url
         }
       }
     },
