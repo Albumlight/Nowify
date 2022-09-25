@@ -141,7 +141,7 @@ export default {
         console.log(error)
         
       }
-      return await data.data.images;
+      return await data.data;
     },
 
     
