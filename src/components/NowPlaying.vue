@@ -101,7 +101,21 @@ export default {
          
         
         data = await response.json()
-        const artistId = data.item.artists[0].id
+        /**
+ * Get the ID of the first artist:
+ */
+const artistId = data.item.artists[0].id
+
+/**
+ * Query the Spotify API and append the artist ID;
+ */
+const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.artist}/${artistId}`)
+
+/**
+ * Convert the API response to JSON
+ */
+const artistData = await artistResponse.json()
+
         this.playerResponse = data
       } catch (error) {
         this.handleExpiredToken()
