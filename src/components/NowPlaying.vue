@@ -42,7 +42,7 @@ export default {
       swatches: [],
       dataResponse: [],
       images: [],
-      1GJ03RP8m15KzoFVsvRKSx: null,
+      '1GJ03RP8m15KzoFVsvRKSx': null,
      }
   },
   computed: {
