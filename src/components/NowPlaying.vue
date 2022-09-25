@@ -160,14 +160,14 @@ export default {
           this.$emit('spotifyTrackUpdated', data)
         })
       }
-    },
+    }
 
      async created () {
     const response = await fetch("https://reqres.in/api/users")
     const { data: users } = await response.json()
     this.users = users
-  },
-}  
+  }
+},  
     
      
     getAlbumColours() {
