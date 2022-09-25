@@ -136,11 +136,12 @@ export default {
         
         data = await response.json()
         console.log(response)
-        this.art = data
+        this.data = data
       } catch (error) {
         console.log(error)
         
       }
+      return await data.data.images;
     },
 
     
