@@ -41,6 +41,7 @@ export default {
       colourPalette: '',
       swatches: [],
       dataResponse: []
+      users: null,
      }
   },
   computed: {
@@ -161,7 +162,12 @@ export default {
       }
     },
 
-       
+     async created () {
+    const response = await fetch("https://reqres.in/api/users")
+    const { data: users } = await response.json()
+    this.users = users
+  },
+}  
     
      
     getAlbumColours() {
