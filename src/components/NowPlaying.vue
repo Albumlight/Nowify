@@ -116,6 +116,14 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
  */
 const artistData = await artistResponse.json()
 
+/**
+ * Merge the player data and artist data to one object:
+ */
+this.playerResponse = {
+  ...data,
+  artist: artistData
+}
+
         this.playerResponse = data
       } catch (error) {
         this.handleExpiredToken()
