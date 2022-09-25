@@ -44,7 +44,7 @@ export default {
         token: 'https://accounts.spotify.com/api/token',
         base: 'https://api.spotify.com/v1',
         nowPlaying: 'me/player/currently-playing',
-        ArtistArt: 'artists/1GJ03RP8m15KzoFVsvRKSx'
+        artists: 'artists'
       },
       player: {
         playing: false,
