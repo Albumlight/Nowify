@@ -148,7 +148,8 @@ this.playerResponse = {
       let data = {}
       
       try {
-        "https://reqres.in/api/users"
+        const response = await fetch(
+         "https://reqres.in/api/users"
         )
         
         const { data: users } = await response.json()
