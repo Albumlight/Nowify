@@ -141,9 +141,7 @@ export default {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
         this.data = data
-        this.$nextTick(() => {
-          this.$emit('spotifyTrackUpdated', data)
-        })
+        
       }
     },
 
