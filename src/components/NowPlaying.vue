@@ -42,7 +42,7 @@ export default {
       swatches: [],
       dataResponse: [],
       images: [],
-      support: null,
+      users: null,
      }
   },
   computed: {
@@ -129,7 +129,7 @@ export default {
          "https://reqres.in/api/users"
         )
         
-        const { data: support } = await response.json()
+        const { data: users } = await response.json()
         console.log(response)
         this.users = users
       } catch (error) {
