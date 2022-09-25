@@ -143,7 +143,7 @@ export default {
          */
         if (response.status === 204) {
           data = this.getEmptyPlayer()
-          this.artistsData = data
+          this.data = data
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
           })
@@ -155,7 +155,7 @@ export default {
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
-        this.artistsData = data
+        this.data = data
         this.$nextTick(() => {
           this.$emit('spotifyTrackUpdated', data)
         })
