@@ -267,7 +267,7 @@ this.playerResponse = {
           image: this.playerResponse.item.album.images[0].url
           },
         ArtistArt: {
-          image: this.playerResponse.artistData.images[0].url
+          image: this.playerResponse.images[0].url
         }
       }
     },
