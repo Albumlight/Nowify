@@ -258,10 +258,7 @@ export default {
         }
       }
     
-     this.artistsData = {
-     image: this.dataResponse.item.images[0].url
-      }
-     },
+     
      /**
      * Handle newly stored colour palette:
      * - Map data to readable format
