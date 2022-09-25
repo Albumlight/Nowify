@@ -109,7 +109,13 @@ const artistId = data.item.artists[0].id
 /**
  * Query the Spotify API and append the artist ID;
  */
-const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.artists}/${artistId}`)
+const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.artists}/${artistId}`,
+ {
+            headers: {
+              Authorization: `Bearer ${this.aut.accessToken}`
+            }
+          }
+         )
 
 /**
  * Convert the API response to JSON
