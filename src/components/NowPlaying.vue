@@ -148,13 +148,7 @@ this.playerResponse = {
       let data = {}
       
       try {
-        const response = await fetch(
-         `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
-          {
-            headers: {
-              Authorization: `Bearer ${this.auth.accessToken}`
-            }
-          }
+        "https://reqres.in/api/users"
         )
         
         const { data: users } = await response.json()
@@ -322,7 +316,7 @@ this.playerResponse = {
     playerData: function() {
       this.$emit('spotifyTrackUpdated', this.playerData)
       this.$nextTick(() => {
-        this.created()
+        this.getAlbumColours()
       })
     }
   }
