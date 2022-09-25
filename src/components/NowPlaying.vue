@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="data.image.image"
+          :src="player.trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -160,12 +160,13 @@ export default {
           this.$emit('spotifyTrackUpdated', data)
         })
       }
-    }
+    },
 
      async created () {
     const response = await fetch("https://reqres.in/api/users")
     const { data: users } = await response.json()
     this.users = users
+  }
   }
 },  
     
