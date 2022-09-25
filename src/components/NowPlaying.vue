@@ -127,6 +127,7 @@ export default {
     const { data: users } = await response.json()
     this.users = users
   }
+  }
 },
     
      
