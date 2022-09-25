@@ -42,6 +42,7 @@ export default {
       swatches: [],
       dataResponse: [],
       images: [],
+      users: null,
      }
   },
   computed: {
@@ -121,29 +122,12 @@ export default {
     },
     
 
-     async created() {
-      let data = {}
-      
-      try {
-        const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
-          {
-            headers: {
-              Authorization: `Bearer ${this.auth.accessToken}`
-            }
-          }
-        )
-        
-        data = await response.json()
-        console.log(response)
-        this.data = data
-      } catch (error) {
-        console.log(error)
-        
-      }
-      return await data.data;
-    },
-
+     async created () {
+    const response = await fetch("https://reqres.in/api/users")
+    const { data: users } = await response.json()
+    this.users = users
+  },
+}
     
      
     getAlbumColours() {
