@@ -136,7 +136,7 @@ export default {
         console.log(error)
         
       }
-      return await dat;
+      return await data.support;
     },
     
     
