@@ -120,7 +120,7 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
  * Convert the API response to JSON
  */
 
-const { images,[0]: artistData } = await artistResponse.json()
+const { images: artistData } = await artistResponse.json()
 this.artistData = artistData
 /**
  * Merge the player data and artist data to one object:
@@ -270,6 +270,9 @@ this.playerResponse = {
          }
     },
      
+     this.artistData = {
+     image: this.images[0].url,
+     }
      /**
      * Handle newly stored colour palette:
      * - Map data to readable format
