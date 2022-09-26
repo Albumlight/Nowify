@@ -41,8 +41,6 @@ export default {
       colourPalette: '',
       swatches: [],
       dataResponse: [],
-      images: [],
-      '1GJ03RP8m15KzoFVsvRKSx': null,
      }
   },
   computed: {
