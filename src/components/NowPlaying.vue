@@ -265,7 +265,7 @@ this.playerResponse = {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.artistResponse.artist.images[0].url
+          image: this.artistResponse.images[0].url
           }
          }
     },
