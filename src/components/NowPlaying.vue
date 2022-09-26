@@ -41,6 +41,7 @@ export default {
       colourPalette: '',
       swatches: [],
       dataResponse: [],
+      artistData: null,
      }
   },
   computed: {
@@ -120,12 +121,13 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
  */
 
 const { images: artistData } = await artistResponse.json()
+this.artistData = artistData
 /**
  * Merge the player data and artist data to one object:
  */
 this.playerResponse = {
   ...data,
-  images: artistData
+  artist: artistData
 }
 
         this.playerResponse = data
