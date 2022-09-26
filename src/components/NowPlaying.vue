@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="artistData"
+          :src="trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -265,14 +265,11 @@ this.playerResponse = {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.album.images[0].url,
+          image: this.artistData.images[0].url,
           }
          }
     },
-     
-     this.artistData = {
-     image: this.images[0].url,
-     },
+    
      /**
      * Handle newly stored colour palette:
      * - Map data to readable format
