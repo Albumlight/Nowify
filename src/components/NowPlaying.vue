@@ -272,7 +272,7 @@ this.playerResponse = {
      
      this.artistData = {
      image: this.images[0].url,
-     }
+     },
      /**
      * Handle newly stored colour palette:
      * - Map data to readable format
