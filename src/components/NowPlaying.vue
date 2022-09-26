@@ -316,9 +316,7 @@ this.playerResponse = {
     playerResponse: function() {
       this.handleNowPlaying()
     },
-    dataResponse: function() {
-    this.handleNowPlaying()
-    },
+   
     /**
      * Watch our locally stored track data.
      */
