@@ -125,7 +125,7 @@ const { images: artistData } = await artistResponse.json()
  */
 this.playerResponse = {
   ...data,
-  artist: artistData
+  images: artistData
 }
 
         this.playerResponse = data
