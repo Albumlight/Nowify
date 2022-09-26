@@ -120,7 +120,7 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
  * Convert the API response to JSON
  */
 
-const { images: artistData } = await artistResponse.json()
+const { genres: artistData } = await artistResponse.json()
 this.artistData = artistData
 /**
  * Merge the player data and artist data to one object:
