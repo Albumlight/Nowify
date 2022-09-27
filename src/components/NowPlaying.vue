@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="plaatje"
+          :src="player.trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -131,7 +131,7 @@ plaatje: artistData.images[0].url,
  */
 this.playerResponse = {
   ...data,
-  images: artistData
+  artist: artistData
 }
 
         this.playerResponse = data
@@ -269,7 +269,7 @@ this.playerResponse = {
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           title: this.playerResponse.item.album.name,
-          image: this.playerResponse.item.album.images[0].url,
+          image: this.playerResponse.artist.images[0].url,
           }
          }
     },
