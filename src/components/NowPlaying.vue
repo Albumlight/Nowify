@@ -131,7 +131,7 @@ plaatje: artistData.images[0].url,
  */
 this.playerResponse = {
   ...data,
-  artist: artistData
+  images: artistData
 }
 
         this.playerResponse = data
