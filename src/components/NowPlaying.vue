@@ -7,12 +7,12 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="player.trackAlbum.images"
+          :src="player.trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
       </div>
-      <div class="now-playing__details">
+      <div class="https://i.scdn.co/image/ab6761610000e5eb147841812056c247407811f3">
         <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
         <h2 class="now-playing__artists" v-text="artistData"></h2>
       </div>
