@@ -120,7 +120,7 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
  * Convert the API response to JSON
  */
 
-const { images: artistData } = await artistResponse.json()
+const artistData = await artistResponse.json()
 this.artistData = artistData
 this.dinsdagData = ArtistData.map(images => ({
 
