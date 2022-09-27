@@ -1,4 +1,4 @@
-<template>
+2<template>
   <div id="app">
     <div
       v-if="player.playing"
@@ -40,7 +40,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: [],
-      dataResponse: [],
+      artistResponse: [],
       artistData: [0],
      }
   },
