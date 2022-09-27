@@ -122,7 +122,7 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
  */
 
 const artistData = await artistResponse.json()
-this.artistData = artistData
+
 this.artistData = {
 plaatje: artistData.images[0].url,
  }          
