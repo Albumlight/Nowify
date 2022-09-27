@@ -271,6 +271,7 @@ this.playerResponse = {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url,
           }
+        imageArtist: this.playerResponse.artist.images[0].url,
          }
     },
     
