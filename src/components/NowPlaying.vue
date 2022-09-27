@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="player.trackAlbum.image"
+          :src="player.trackAlbum.images"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -42,6 +42,7 @@ export default {
       swatches: [],
       artistResponse: [],
       artistData: {}, 
+      images: {},
      }
   },
   computed: {
@@ -123,7 +124,7 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
 const artistData = await artistResponse.json()
 
 this.artistData = {
-images: artistData.item.images[0].url,
+images: artistData.images[0].url,
 }        
 /**
  * Merge the player data and artist data to one whole object:
