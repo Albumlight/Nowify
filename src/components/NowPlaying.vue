@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="plaatje"
+          :src="artistData"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
