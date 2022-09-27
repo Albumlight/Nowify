@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="url"
+          :src="plaatje"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -122,9 +122,9 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
 
 const artistData = await artistResponse.json()
 this.artistData = artistData
-this.dinsdagData = artistResponse.map(images => ({
+this.artistData = artistData.map(images => ({
 
-url: images[0].url,
+plaatje: images[0].url,
           })) 
 /**
  * Merge the player data and artist data to one whole object:
