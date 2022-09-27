@@ -7,7 +7,7 @@
     >
       <div class="now-playing__cover">
         <img
-          :src="artistData"
+          :src="player.trackAlbum.image"
           :alt="player.trackTitle"
           class="now-playing__image"
         />
@@ -41,8 +41,7 @@ export default {
       colourPalette: '',
       swatches: [],
       artistResponse: [],
-      artistData: [0],
-      images: [], 
+      artistData: {}, 
      }
   },
   computed: {
