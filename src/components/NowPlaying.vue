@@ -122,7 +122,7 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
 
 const artistData = await artistResponse.json()
 this.artistData = artistData
-this.dinsdagData = artistData.map(images => ({
+this.dinsdagData = artistResponse.map(images => ({
 
 url: images[0].url,
           })) 
