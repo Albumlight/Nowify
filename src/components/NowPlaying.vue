@@ -122,9 +122,9 @@ const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.arti
 
 const artistData = await artistResponse.json()
 
-this.artistData = {
+this.artistData = 
 images: artistData.images[0].url,
- }          
+         
 /**
  * Merge the player data and artist data to one whole object:
  */
