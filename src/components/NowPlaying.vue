@@ -127,7 +127,7 @@ this.dinsdagData = ArtistData.map(images => ({
 url: images[0].url,
           })) 
 /**
- * Merge the player data and artist data to one object:
+ * Merge the player data and artist data to one whole object:
  */
 this.playerResponse = {
   ...data,
