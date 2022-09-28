@@ -134,7 +134,7 @@ images: artistData.images[0].url,
 
         this.playerResponse = { 
         ...data, 
-        artisData: artistData
+        artistData: artistData
         } 
         } catch (error) {
         this.handleExpiredToken()
