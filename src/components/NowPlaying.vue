@@ -129,12 +129,12 @@ images: artistData.images[0].url,
 /**
  * Merge the player data and artist data to one whole object:
  */
-this.playerResponse = {
-  ...data,
-  images: artistData
-}
 
-        this.playerResponse = data
+
+        this.playerResponse = data {
+        ...data, 
+        artistData: artistData
+      } 
       } catch (error) {
         this.handleExpiredToken()
         data = this.getEmptyPlayer()
