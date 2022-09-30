@@ -12,7 +12,7 @@
   
   &__cover,
   &__details {
-    position: relative;
+    position: absolute;
     text-align: center;
     width: 100%;
     top: 1370px;
@@ -38,11 +38,11 @@
   &__image2 {
     width: 927px;
     height: 917px;
-    bottom: 917px;
+    bottom: 0px;
     padding-right: 0px;
     filter: sepia(7%) contrast(100%);
     //border: 5px solid #000;
-    position: absolute;
+    position: relative;
     right: 0px;
   }
 
