@@ -15,11 +15,13 @@
       <div class="now-playing__details">
         <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
         <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
-        <img
+       </div>
+       </div>
+      <div class="now-playing__image2">
+         <img
           :src="player.trackAlbum.image2"
           :alt="player.trackTitle"
           class="now-playing__image2"
-          id="backgroundimage"
         />
       </div>
     </div>
