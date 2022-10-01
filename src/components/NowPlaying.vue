@@ -27,6 +27,7 @@
       <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
     </div>
   </div>
+   </div>
 </template>
 
 <script>
