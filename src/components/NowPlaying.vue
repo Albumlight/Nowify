@@ -18,7 +18,7 @@
         <img
           :src="player.trackAlbum.image2"
           :alt="player.trackTitle"
-          class="now-playing__image"
+          class="now-playing__image2"
           id="backgroundimage"
         />
       </div>
