@@ -11,6 +11,12 @@
           :alt="player.trackTitle"
           class="now-playing__image"
         />
+        <div class="now-playing__cover">
+        <img
+          :src="player.trackAlbum.image"
+          :alt="player.trackTitle"
+          class="now-playing__image2"
+        />
       </div>
       <div class="now-playing__details">
         <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
