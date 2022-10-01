@@ -189,14 +189,14 @@ images: artistData.images[0].url,
       /**
        * No image (rare).
        */
-      if (!this.player.trackAlbum?.image) {
+      if (!this.player.trackAlbum?.image2) {
         return
       }
       /**
        * Run node-vibrant to get colours.
        */
-      Vibrant.from(this.player.trackAlbum.image)
-        .quality(1)
+      Vibrant.from(this.player.trackAlbum.image2)
+        .quality(5)
         .clearFilters()
         .getPalette()
         .then(palette => {
