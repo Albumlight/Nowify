@@ -11,13 +11,12 @@
           :alt="player.trackTitle"
           class="now-playing__image"
         />
-        <div class="now-playing__cover">
         <img
-          :src="player.trackAlbum.image"
+          :src="player.trackAlbum.image2"
           :alt="player.trackTitle"
           class="now-playing__image2"
         />
-      </div>
+        </div>
       <div class="now-playing__details">
         <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
         <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
@@ -27,7 +26,6 @@
       <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
     </div>
   </div>
-   </div>
 </template>
 
 <script>
