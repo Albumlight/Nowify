@@ -195,7 +195,7 @@ images: artistData.images[0].url,
       /**
        * Run node-vibrant to get colours.
        */
-      Vibrant.from(this.player.trackAlbum.image2)
+      Vibrant.from(this.player.trackAlbum.image)
         .quality(5)
         .clearFilters()
         .getPalette()
@@ -300,7 +300,7 @@ images: artistData.images[0].url,
         })
       this.swatches = albumColours
       this.colourPalette =
-        albumColours[Math.floor(Math.random() * albumColours.length)]
+        albumColours[(albumColours.length/3)]   // Dark settting
       this.$nextTick(() => {
         this.setAppColours()
       })
