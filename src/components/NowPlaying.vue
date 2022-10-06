@@ -302,6 +302,9 @@ images: artistData.images[0].url,
       this.colourPalette =
       this.colourPalette = albumColours.find((colour) => {
     return colour.text === 'Dark-Vibrant'
+    
+    this.$nextTick(() => {
+        this.setAppColours()
     })
     },
     /**
