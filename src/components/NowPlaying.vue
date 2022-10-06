@@ -29,7 +29,7 @@
 </template>
 
 <script>
-
+import * as Vibrant from 'node-vibrant'
 import props from '@/utils/props.js'
 export default {
   name: 'NowPlaying',
@@ -185,7 +185,24 @@ images: artistData.images[0].url,
     
     
      
-   
+    getAlbumColours() {
+      /**
+       * No image (rare).
+       */
+      if (!this.player.trackAlbum?.image2) {
+        return
+      }
+      /**
+       * Run node-vibrant to get colours.
+       */
+      Vibrant.from(this.player.trackAlbum.image2)
+        .quality(5)
+        .clearFilters()
+        .getPalette()
+        .then(palette => {
+          this.handleAlbumPalette(palette)
+        })
+    },
     /**
      * Return a formatted empty object for an idle player.
      * @return {Object}
