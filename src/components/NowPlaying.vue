@@ -300,10 +300,9 @@ images: artistData.images[0].url,
         })
       this.swatches = albumColours
       this.colourPalette =
-        albumColours[(albumColours.length/3)]   // Dark settting
-      this.$nextTick(() => {
-        this.setAppColours()
-      })
+      this.colourPalette = albumColours.find((colour) => {
+    return colour.text === 'Dark-Muted'
+    })
     },
     /**
      * Handle an expired access token from Spotify.
