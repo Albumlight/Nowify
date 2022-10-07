@@ -301,12 +301,12 @@ images: artistData.images[0].url,
       this.swatches = albumColours
       this.colourPalette = albumColours.find((colour) => {
     return colour.background === 'Dark-Vibrant'
-  }
+  })
       this.$nextTick(() => {
         this.setAppColours()
         console.log(this.setAppColours)
         })
-      })
+      }
     },
     /**
      * Handle an expired access token from Spotify.
