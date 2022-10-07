@@ -303,7 +303,7 @@ images: artistData.images[0].url,
         albumColours[Math.floor(Math.random() * albumColours.length)]
       this.$nextTick(() => {
         this.setAppColours()
-        console.log(this.colourPalette)
+        console.log(this.setAppColours)
       })
     },
     /**
