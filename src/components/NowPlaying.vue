@@ -299,11 +299,9 @@ images: artistData.images[0].url,
           }
         })
       this.swatches = albumColours
-      
-      this.colourPalette = albumColours.find((colour) => {
-    return colour.text === 'Dark-Vibrant'
-     })
-     this.$nextTick(() => {
+      this.colourPalette =
+        albumColours[Math.floor(Math.random() * albumColours.length)]
+      this.$nextTick(() => {
         this.setAppColours()
       })
     },
