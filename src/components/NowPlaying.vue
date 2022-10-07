@@ -306,8 +306,7 @@ images: artistData.images[0].url,
         this.setAppColours()
         console.log(this.setAppColours)
         })
-      }
-    },
+      },
     /**
      * Handle an expired access token from Spotify.
      */
