@@ -223,7 +223,7 @@ images: artistData.images[0].url,
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
         this.getNowPlaying()
-      }, 2500)
+      }, 3500)
     },
     /**
      * Set the stylings of the app based on received colours.
