@@ -265,7 +265,7 @@ images: artistData.images[0].url,
         trackTitle: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
         trackAlbum: {
-          title: this.playerResponse.item.album.name,
+          
           image: this.playerResponse.item.album.images[0].url,
           image2: this.playerResponse.artistData.images[0].url,
           genre: this.playerResponse.artistData.genres[0],
