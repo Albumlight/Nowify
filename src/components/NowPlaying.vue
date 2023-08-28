@@ -168,7 +168,7 @@ export default {
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
         this.getNowPlaying()
-      }, 2500)
+      }, 2000)
     },
 
     /**
@@ -238,27 +238,7 @@ export default {
      * - Map data to readable format
      * - Get and store random colour combination.
      */
-    handleAlbumPalette(palette) {
-      let albumColours = Object.keys(palette)
-        .filter(item => {
-          return item === null ? null : item
-        })
-        .map(colour => {
-          return {
-            text: palette[colour].getTitleTextColor(),
-            background: palette[colour].getHex()
-          }
-        })
 
-      this.swatches = albumColours
-
-      this.colourPalette =
-        albumColours[Math.floor(Math.random() * albumColours.length)]
-
-      this.$nextTick(() => {
-        this.setAppColours()
-      })
-    },
 
     /**
      * Handle an expired access token from Spotify.
