@@ -262,7 +262,7 @@ images: artistData.images[0].url,
         trackArtists: this.playerResponse.item.artists.map(
           artist => artist.name
         ),
-        trackTitle: this.playerResponse.item.name,
+       
         trackId: this.playerResponse.item.id,
         trackAlbum: {
           
