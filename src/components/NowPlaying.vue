@@ -8,11 +8,15 @@
       <div class="now-playing__cover">
         <img
           :src="player.trackAlbum.image"
+          :alt="player.trackTitle"
           class="now-playing__image"
         />
-        
-       
-       </div>
+      </div>
+      <div class="now-playing__details">
+        <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
+        <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
+      </div>
+    </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
       <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
     </div>
@@ -21,26 +25,28 @@
 
 <script>
 import * as Vibrant from 'node-vibrant'
+
 import props from '@/utils/props.js'
+
 export default {
   name: 'NowPlaying',
+
   props: {
     auth: props.auth,
     endpoints: props.endpoints,
     player: props.player
   },
+
   data() {
     return {
       pollPlaying: '',
       playerResponse: {},
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
-      swatches: [],
-      artistResponse: [],
-      artistData: {}, 
-      images: {},
-     }
+      swatches: []
+    }
   },
+
   computed: {
     /**
      * Return a comma-separated list of track artists.
@@ -50,23 +56,23 @@ export default {
       return this.player.trackArtists.join(', ')
     }
   },
+
   mounted() {
     this.setDataInterval()
   },
+
   beforeDestroy() {
     clearInterval(this.pollPlaying)
   },
-  
-  
 
   methods: {
     /**
      * Make the network request to Spotify to
      * get the current played track.
      */
-    
     async getNowPlaying() {
       let data = {}
+
       try {
         const response = await fetch(
           `${this.endpoints.base}/${this.endpoints.nowPlaying}`,
@@ -76,124 +82,75 @@ export default {
             }
           }
         )
+
         /**
          * Fetch error.
          */
         if (!response.ok) {
           throw new Error(`An error has occured: ${response.status}`)
         }
+
         /**
          * Spotify returns a 204 when no current device session is found.
          * The connection was successful but there's no content to return.
          */
-         if (response.status === 204) {
+        if (response.status === 204) {
           data = this.getEmptyPlayer()
           this.playerData = data
+
           this.$nextTick(() => {
             this.$emit('spotifyTrackUpdated', data)
           })
+
           return
         }
-         
-        
+
         data = await response.json()
-        /**
- * Get the ID of the first artist:
- */
-const artistId = data.item.artists[0].id
-
-/**
- * Query the Spotify API and append the artist ID;
- */
-const artistResponse = await fetch(`${this.endpoints.base}/${this.endpoints.artists}/${artistId}`,
- {
-            headers: {
-              Authorization: `Bearer ${this.auth.accessToken}`
-            }
-          }
-         )
-
-/**
- * Convert the API response to JSON
- */
-
-const artistData = await artistResponse.json()
-
-
-this.artistData = {
-images: artistData.images[0].url,
-}        
-/**
- * Merge the player data and artist data to one whole object:
- */
-
-
-        this.playerResponse = { 
-        ...data, 
-        artistData: artistData
-        } 
-        } catch (error) {
+        this.playerResponse = data
+      } catch (error) {
         this.handleExpiredToken()
+
         data = this.getEmptyPlayer()
         this.playerData = data
+
         this.$nextTick(() => {
           this.$emit('spotifyTrackUpdated', data)
         })
       }
     },
-    
+
     /**
      * Get the Now Playing element class.
      * @return {String}
      */
-      getNowPlayingClass() {
+    getNowPlayingClass() {
       const playerClass = this.player.playing ? 'active' : 'idle'
       return `now-playing--${playerClass}`
     },
-    
-     async created() {
-      let data = {}
-      
-      try {
-        const response = await fetch(
-          `${this.endpoints.base}/${this.endpoints.ArtistArt}`,
-          {
-            headers: {
-              Authorization: `Bearer ${this.auth.accessToken}`
-            }
-          }
-        )
-        
-        const { data: users } = await response.json()
-        console.log(response)
-        this.users = users
-      } catch (error) {
-        console.log(error)
-        
-      }
-      return await data.support;
-    },
-    
-    
-     
+
+    /**
+     * Get the colour palette from the album cover.
+     */
     getAlbumColours() {
       /**
        * No image (rare).
        */
-      if (!this.player.trackAlbum?.image2) {
+      if (!this.player.trackAlbum?.image) {
         return
       }
+
       /**
        * Run node-vibrant to get colours.
        */
       Vibrant.from(this.player.trackAlbum.image)
-        .quality(5)
+        .quality(1)
         .clearFilters()
         .getPalette()
         .then(palette => {
           this.handleAlbumPalette(palette)
         })
     },
+
     /**
      * Return a formatted empty object for an idle player.
      * @return {Object}
@@ -207,6 +164,7 @@ images: artistData.images[0].url,
         trackTitle: ''
       }
     },
+
     /**
      * Poll Spotify for data.
      */
@@ -214,8 +172,9 @@ images: artistData.images[0].url,
       clearInterval(this.pollPlaying)
       this.pollPlaying = setInterval(() => {
         this.getNowPlaying()
-      }, 3500)
+      }, 2500)
     },
+
     /**
      * Set the stylings of the app based on received colours.
      */
@@ -224,11 +183,13 @@ images: artistData.images[0].url,
         '--color-text-primary',
         this.colourPalette.text
       )
+
       document.documentElement.style.setProperty(
         '--colour-background-now-playing',
         this.colourPalette.background
       )
     },
+
     /**
      * Handle newly updated Spotify Tracks.
      */
@@ -238,15 +199,19 @@ images: artistData.images[0].url,
         this.playerResponse.error?.status === 400
       ) {
         this.handleExpiredToken()
+
         return
       }
+
       /**
        * Player is active, but user has paused.
        */
       if (this.playerResponse.is_playing === false) {
         this.playerData = this.getEmptyPlayer()
+
         return
       }
+
       /**
        * The newly fetched track is the same as our stored
        * one, we don't want to update the DOM yet.
@@ -254,6 +219,7 @@ images: artistData.images[0].url,
       if (this.playerResponse.item?.id === this.playerData.trackId) {
         return
       }
+
       /**
        * Store the current active track.
        */
@@ -262,18 +228,16 @@ images: artistData.images[0].url,
         trackArtists: this.playerResponse.item.artists.map(
           artist => artist.name
         ),
-       
+        trackTitle: this.playerResponse.item.name,
         trackId: this.playerResponse.item.id,
         trackAlbum: {
-          
-          image: this.playerResponse.item.album.images[0].url,
-          image2: this.playerResponse.artistData.images[0].url,
-          genre: this.playerResponse.artistData.genres[0],
-          }
+          title: this.playerResponse.item.album.name,
+          image: this.playerResponse.item.album.images[0].url
         }
+      }
     },
-    
-     /**
+
+    /**
      * Handle newly stored colour palette:
      * - Map data to readable format
      * - Get and store random colour combination.
@@ -289,16 +253,17 @@ images: artistData.images[0].url,
             background: palette[colour].getHex()
           }
         })
+
       this.swatches = albumColours
+
       this.colourPalette =
-      albumColours[(albumColours.length/3)]   // Dark settting
-      
-      
+        albumColours[Math.floor(Math.random() * albumColours.length)]
+
       this.$nextTick(() => {
         this.setAppColours()
-        console.log(this.setAppColours)
-        })
-      },
+      })
+    },
+
     /**
      * Handle an expired access token from Spotify.
      */
@@ -316,18 +281,20 @@ images: artistData.images[0].url,
         clearInterval(this.pollPlaying)
       }
     },
+
     /**
      * Watch the returned track object.
      */
     playerResponse: function() {
       this.handleNowPlaying()
     },
-   
+
     /**
      * Watch our locally stored track data.
      */
     playerData: function() {
       this.$emit('spotifyTrackUpdated', this.playerData)
+
       this.$nextTick(() => {
         this.getAlbumColours()
       })
@@ -335,4 +302,5 @@ images: artistData.images[0].url,
   }
 }
 </script>
+
 <style src="@/styles/components/now-playing.scss" lang="scss" scoped></style>
