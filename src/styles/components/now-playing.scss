@@ -17,15 +17,15 @@
     width: 1000px;
     top: 0px;
     left: 420px;
+    position: absolute;
   }
 
   &__image {
     width: 1080px;
     height: 1080px;
-    padding-top: 0px;
-    padding-left: 0px;
+    
     filter: sepia(7%) contrast(100%);
-    left: 420px;
+ 
     position: relative;
   }
  
