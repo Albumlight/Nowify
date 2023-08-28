@@ -15,14 +15,15 @@
  
   &__cover {
     width: 1000px;
-    top: 0px;
-    left: 420px;
-    position: absolute;
+   
   }
 
   &__image {
     width: 1080px;
     height: 1080px;
+    top: 0px;
+    left: 420px;
+    position: absolute;
     
     filter: sepia(7%) contrast(100%);
  
