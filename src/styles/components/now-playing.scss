@@ -13,11 +13,12 @@
   padding: var(--spacing-l);
   width: 100%;
 
-  &__cover,
+  
   &__details {
     padding: var(--spacing-m);
     text-align: center;
     width: 100%;
+    display: none;
   }
 
   &__cover {
