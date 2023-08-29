@@ -12,6 +12,13 @@
   display: flex;
   flex-flow: column nowrap;
   &__cover,
+  &__details {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 1030px;
+    right: 20px;
+  }
   
  
   &__cover {
@@ -22,7 +29,7 @@
   &__image {
     width: 1080px;
     height: 1080px;
-    top: 70px;
+    top: 0px;
     left: 420px;
     position: relative;
     
