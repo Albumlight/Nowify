@@ -22,13 +22,13 @@
   }
 
   &__cover {
-  display: center;
+  position: fixed;
   }
 
   &__image {
     height: 1080px;
     width: 1080px;
-    display: block;
+    
     
   }
 
