@@ -9,7 +9,8 @@
   color: #FFF;
   height: 1080px;
   width: 1920px;
-  left: 200px;
+  display: flex;
+  flex-flow: column nowrap;
   &__cover,
   
  
