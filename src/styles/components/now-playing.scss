@@ -13,8 +13,8 @@
     position: relative;
     text-align: center;
     width: 100%;
-    top: 1030px;
-    right: 20px;
+    top: 30px;
+    right: 0px;
     left: 200px;
   }
   
@@ -27,9 +27,7 @@
   &__image {
     width: 1080px;
     height: 1080px;
-    top: 0px;
-    left: 420px;
-    position: static;
+    
     
     filter: sepia(7%) contrast(100%);
  
