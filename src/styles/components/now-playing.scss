@@ -14,7 +14,6 @@
   width: 100%;
 
   &__cover,
-  &__track,
   &__details {
     padding: var(--spacing-m);
     text-align: bottom;
@@ -43,6 +42,7 @@
 
   &__track {
     font-weight: var(--font-weight-heading);
+    opacity: 0.8;
   }
 
   &__artists {
