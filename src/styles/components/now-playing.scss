@@ -25,13 +25,13 @@
   &__cover {
   position: fixed;
   left: 400px;
-  animation: fadeinout 20s linear infinite;
+ 
   }
 
   &__image {
     height: 1080px;
     width: 1080px;
-    
+    animation: fadeinout 20s linear infinite;
   }
 
   @keyframes fadeinout {
