@@ -158,9 +158,7 @@ export default {
     getEmptyPlayer() {
       return {
         playing: false,
-        trackAlbum: {
-        image: this.playerResponse.item.album.images[0].url
-        },
+        trackAlbum: {},
         trackArtists: [],
         trackId: '',
         trackTitle: ''
