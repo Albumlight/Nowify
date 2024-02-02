@@ -5,7 +5,7 @@
  *
  */
 .now-playing {
-  background-color: #818859;
+  background-color: #D3D3D3;
   color: var(--color-text-primary);
   display: flex;
   flex-flow: column nowrap;
@@ -25,7 +25,7 @@
   &__cover {
   position: fixed;
   top: 6px;
-  left: 406px;
+  left: 404px;
   animation: fadeinout 5s;
   }
 
