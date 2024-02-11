@@ -27,13 +27,13 @@
   top: 6px;
   left: 404px;
   animation: fadeinout 5s;
-  border: 2px solid #FFF;
+  
   }
 
   &__image {
     height: 1060px;
     width: 1066px;
-    
+    border: 2px solid #d3d3d3;
   }
 
   @keyframes fadeinout {
