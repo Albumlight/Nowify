@@ -24,15 +24,15 @@
 
   &__cover {
   position: fixed;
-  top: 36px;
-  left: 420px;
+  top: 40px;
+  left: 424px;
   animation: fadeinout 5s;
   
   }
 
   &__image {
     height: 1045px;
-    width: 1051px;
+    width: 1045px;
     border: 2px solid #828282;
     opacity: 0.9;
     filter: sepia(10%);
