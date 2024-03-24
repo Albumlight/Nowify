@@ -34,7 +34,8 @@
     height: 1025px;
     width: 1025px;
     border: 2px solid #828282;
-    
+    position: absolute;
+    top: 0px;
     filter: sepia(20%);
     filter: brightness(90%);
   }
