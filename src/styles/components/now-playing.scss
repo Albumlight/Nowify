@@ -4,6 +4,16 @@
  * Styles for the 'Now Playing' screen.
  *
  */
+ /* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 .now-playing {
   background-color: #000;
   color: var(--color-text-primary);
@@ -39,16 +49,7 @@
     filter: sepia(20%);
     filter: brightness(90%);
   }
-  /* we will explain what these classes do next! */
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
+ 
   @keyframes fadeinout {
   0%,
   100% {
