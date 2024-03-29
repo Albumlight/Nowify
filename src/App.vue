@@ -9,10 +9,7 @@
       @requestRefreshToken="requestRefreshTokens"
     ></Component>
   </div>
-   <button @click="show = !show">Toggle</button>
-  <Transition>
-    <p v-if="show">hello</p>
-  </Transition>
+   
 </template>
 
 <script>
