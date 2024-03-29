@@ -13,8 +13,10 @@
         />
       </div>
       <div class="now-playing__details">
+        <transition name="fade">
         <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
         <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
+        </transition>
       </div>
       
     </div>
